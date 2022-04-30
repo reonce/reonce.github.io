@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       text: "About",
-      link: "/2022/03/06/关于/",
+      link: "/2021/06/01/关于/",
     },
   ],
   footer: {

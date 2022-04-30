@@ -10,12 +10,6 @@ module.exports = {
   markdown: {
     lineNumbers: true, // 代码行号
   },
-  children: [
-    {
-      title: "前端",
-      path: "../测试文档/a.md",
-    },
-  ],
 
   head,
   themeConfig,
