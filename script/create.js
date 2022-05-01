@@ -53,7 +53,9 @@ function typeCheckbox(title) {
 
 function createFile(title, tags) {
   const date = new Date();
-  const formatDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
+  const formatDate = `${date.getFullYear()}-${
+    date.getMonth() + 1
+  }-${date.getDate()}`;
   const temp = `---
 title: ${title}
 date: ${formatDate}
