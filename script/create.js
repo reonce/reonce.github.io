@@ -39,8 +39,10 @@ function typeCheckbox(title) {
           "Object",
           "React",
           "浏览器工作原理",
+          "红宝书",
+          "感悟",
         ],
-        default: ["JavaScript"],
+        default: [""],
       },
     ])
     .then((res) => {
