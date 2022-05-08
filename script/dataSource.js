@@ -16,6 +16,7 @@ const pathOptions = [
   "JavaScript属性和方法",
   "浏览器工作原理",
   "JS高级程序设计",
+  "React",
   "前端工程化",
 ];
 
