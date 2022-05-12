@@ -1,9 +1,10 @@
-# title: 一文读懂React性能优化
+---
+title: 一文读懂React性能优化
 date: 2022-5-8
 author: reonce
 tags: React
 location: 成都  
-
+---
 # React性能优化
 进行React开发时，如果组件设计不当，容易造成大量的重复渲染（render），影响页面的性能，存在心智负担。本文将解释以下几点：
 1. React的性能优化是如何命中

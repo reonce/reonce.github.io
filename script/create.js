@@ -15,7 +15,7 @@ class NewArticle {
     const title = process.argv[2];
     if (title) {
       this.title = title;
-      createFile();
+      this.createFile();
       return;
     }
     inquirer
