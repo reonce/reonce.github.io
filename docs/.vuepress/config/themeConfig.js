@@ -1,4 +1,5 @@
 module.exports = {
+  logo: "../public/logo.png",
   nav: [
     {
       text: "Blog",

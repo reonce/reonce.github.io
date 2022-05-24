@@ -14,6 +14,7 @@ const tagOptions = [
 const pathOptions = [
   "",
   "JavaScript属性和方法",
+  "JavaScript进阶",
   "浏览器工作原理",
   "JS高级程序设计",
   "React",
