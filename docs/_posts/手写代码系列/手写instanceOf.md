@@ -1,6 +1,6 @@
 ---
 title: 手写instanceOf
-date: 2022-6-7
+date: 2022-6-8
 author: reonce
 tags: 手写代码系列
 location: 成都  
@@ -24,6 +24,24 @@ function myInstance(left, right) {
 var a = {};
 console.log(myInstance(a,Array)); //false
 console.log(myInstance({}, Object)) //true
+~~~
+
+一种更好的写法，避免递归函数带来的“栈”问题。（2022.6.8更新）
+~~~js
+function newInstance(left, right) {
+    let flag = left;
+    while(flag) {
+      const proto = flag.__proto__ ;
+      if(proto === right.prototype) {
+        return true;
+      }
+      flag = proto;
+    }
+    return false
+}
+var a = {};
+console.log(newInstance(a,Array)); //false
+console.log(newInstance({}, Object)) //true
 ~~~
 
 instanceof存在一点局限性，也就是在instanceof 和多全局对象(例如：多个 frame 或多个 window 之间的交互)时。
