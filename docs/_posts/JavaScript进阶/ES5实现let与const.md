@@ -2,7 +2,7 @@
 title: ES5实现let与const
 date: 2022-5-22
 author: reonce
-tags: JavaScript
+tags: JavaScript,手写代码系列
 location: 成都  
 ---
 # ES5实现let与const
