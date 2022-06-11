@@ -14,6 +14,7 @@ npm run build
 cd docs/.vuepress/dist
 
 git init
+git pull
 git add -A
 git commit -m 'build'
 
