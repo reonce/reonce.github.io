@@ -9,7 +9,8 @@ const tagOptions = [
   "前端工程化",
   "红宝书",
   "感悟",
-  "手写代码系列"
+  "手写代码系列",
+  "数据结构与算法",
 ];
 
 const pathOptions = [
@@ -20,7 +21,8 @@ const pathOptions = [
   "JS高级程序设计",
   "React",
   "前端工程化",
-  "手写代码系列"
+  "手写代码系列",
+  "数据结构与算法",
 ];
 
 module.exports = {
