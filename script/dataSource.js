@@ -23,6 +23,7 @@ const pathOptions = [
   "前端工程化",
   "手写代码系列",
   "数据结构与算法",
+  "CSS",
 ];
 
 module.exports = {
