@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css3新特性 | reonce的前端博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-7828333725993554" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="CSS3中新特性样式篇
+背景
+`
+background-origin：   规定背景图片的定位区域。
+	☞ padding-box    背景图像相对内边距定位（默认值）
+	☞ border-box	 背景图像相对边框定位【以边框左上角为参照进行位置设置】
+	☞ content-box    背景图像相对内容区域定位【以内容区域左上角为参照进行位置设置 ...">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.7f53e68d.css" as="style"><link rel="preload" href="/assets/js/app.6ec7b628.js" as="script"><link rel="preload" href="/assets/js/6.22cf8d93.js" as="script"><link rel="preload" href="/assets/js/3.90335b74.js" as="script"><link rel="preload" href="/assets/js/13.4c87bfde.js" as="script"><link rel="prefetch" href="/assets/js/10.37381bb9.js"><link rel="prefetch" href="/assets/js/11.1b24ed80.js"><link rel="prefetch" href="/assets/js/12.5d7b2b43.js"><link rel="prefetch" href="/assets/js/14.50a7e17e.js"><link rel="prefetch" href="/assets/js/15.eac47c67.js"><link rel="prefetch" href="/assets/js/16.367d5861.js"><link rel="prefetch" href="/assets/js/17.ff7b3969.js"><link rel="prefetch" href="/assets/js/18.156016fb.js"><link rel="prefetch" href="/assets/js/19.deb61eb3.js"><link rel="prefetch" href="/assets/js/20.a7d139a4.js"><link rel="prefetch" href="/assets/js/21.8b469657.js"><link rel="prefetch" href="/assets/js/22.06476f04.js"><link rel="prefetch" href="/assets/js/23.d6e07eb3.js"><link rel="prefetch" href="/assets/js/24.6fffb479.js"><link rel="prefetch" href="/assets/js/25.fb8935b9.js"><link rel="prefetch" href="/assets/js/26.af8276ae.js"><link rel="prefetch" href="/assets/js/27.93601a27.js"><link rel="prefetch" href="/assets/js/28.ee930746.js"><link rel="prefetch" href="/assets/js/29.1e3085f2.js"><link rel="prefetch" href="/assets/js/30.1c594802.js"><link rel="prefetch" href="/assets/js/31.d48ade60.js"><link rel="prefetch" href="/assets/js/32.446bfa2a.js"><link rel="prefetch" href="/assets/js/33.3c0ea4ca.js"><link rel="prefetch" href="/assets/js/34.4164544c.js"><link rel="prefetch" href="/assets/js/35.ca61810d.js"><link rel="prefetch" href="/assets/js/36.5e2ae511.js"><link rel="prefetch" href="/assets/js/37.67a45f2c.js"><link rel="prefetch" href="/assets/js/38.ef04fed3.js"><link rel="prefetch" href="/assets/js/39.4fa7714f.js"><link rel="prefetch" href="/assets/js/4.494a29d6.js"><link rel="prefetch" href="/assets/js/40.9f871701.js"><link rel="prefetch" href="/assets/js/41.1ed73841.js"><link rel="prefetch" href="/assets/js/42.2a155b35.js"><link rel="prefetch" href="/assets/js/43.440a3650.js"><link rel="prefetch" href="/assets/js/44.ed1122a7.js"><link rel="prefetch" href="/assets/js/45.fe3606b7.js"><link rel="prefetch" href="/assets/js/46.20d9ae56.js"><link rel="prefetch" href="/assets/js/47.bd75cdd5.js"><link rel="prefetch" href="/assets/js/48.303484ee.js"><link rel="prefetch" href="/assets/js/49.d87dcc9d.js"><link rel="prefetch" href="/assets/js/5.8a310537.js"><link rel="prefetch" href="/assets/js/50.9b6eff99.js"><link rel="prefetch" href="/assets/js/51.e8f09c85.js"><link rel="prefetch" href="/assets/js/52.1317d8ef.js"><link rel="prefetch" href="/assets/js/53.d1ae9fa3.js"><link rel="prefetch" href="/assets/js/54.a1d1a083.js"><link rel="prefetch" href="/assets/js/55.ae4d26cc.js"><link rel="prefetch" href="/assets/js/7.3b00d339.js"><link rel="prefetch" href="/assets/js/8.11614fa6.js"><link rel="prefetch" href="/assets/js/9.8572e884.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.c5a62229.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f53e68d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">reonce的前端博客 </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Blog</a></li><li class="nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="nav-item"><a href="/2021/06/01/关于/" class="nav-link">About</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">reonce的前端博客 </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="mobile-nav-item"><a href="/2021/06/01/关于/" class="nav-link">About</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        css3新特性
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">reonce</span> <span itemprop="address">   in 成都</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2022-2-19">
+      Sat Feb 19 2022
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-42ccfcd5><a href="/tag/css" data-v-42ccfcd5><span data-v-42ccfcd5>css</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="css3知识点汇总"><a href="#css3知识点汇总" class="header-anchor">#</a> CSS3知识点汇总</h1> <h2 id="css3中新特性样式篇"><a href="#css3中新特性样式篇" class="header-anchor">#</a> CSS3中新特性样式篇</h2> <h3 id="背景"><a href="#背景" class="header-anchor">#</a> 背景</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>background-origin：   规定背景图片的定位区域。
+	☞ padding-box    背景图像相对内边距定位（默认值）
+	☞ border-box	 背景图像相对边框定位【以边框左上角为参照进行位置设置】
+	☞ content-box    背景图像相对内容区域定位【以内容区域左上角为参照进行位置设置】
+
+   备注：
+		默认盒子的背景图片是在盒子的内边距左上角对齐设置。(padding-box)
+
+
+background-clip：  	 规定背景的绘制区域。
+	☞ border-box	 背景被裁切到边框盒子位置 【将背景图片在整个容器中显示】
+	☞ padding-box	 背景被裁切到内边距区域【将背景图片在内边距区域（包含内容区域）显示】
+	☞ content-box	 背景被裁切到内容区域【将背景图片在内容区域显示】
+	备注：
+		默认背景的绘制区域是border-box。
+
+background-size：     规定背景图片的尺寸。
+	☞ cover			//背景图片按照原来的缩放比，铺满整个容器
+	☞ contain		//背景图片按照原来的缩放比，完整地显示到容器中(不确定是否铺满屏幕)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="边框"><a href="#边框" class="header-anchor">#</a> 边框</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>box-shadow：x,y,blur,color     盒子阴影
+	x: 代表阴影在水平方向的偏移量
+	y: 代表阴影在垂直方向的偏移量
+	blur: 代表阴影的模糊度(模糊尺寸)
+	color: 代表阴影的颜色
+border-radius：   边框圆角
+border-image:	  边框图片
+		 /* 设置边框图片 */
+		 border-image-source: url(&quot;2.png&quot;);
+
+		 /* 边框图片裁切 : 不需要带单位*/
+		 border-image-slice: 20;
+
+		 /* 设置边框图片的平铺方式 */
+		 /* border-image-repeat: stretch; */
+		 border-image-repeat: round;
+		/*  border-image-repeat: repeat; */
+
+		//边框图片的宽度
+		border-image-width: 20px;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="文本"><a href="#文本" class="header-anchor">#</a> 文本</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>☞text-shadow：x,y,blur,color 设置文本阴影
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="css3新特性之选择器篇"><a href="#css3新特性之选择器篇" class="header-anchor">#</a> CSS3新特性之选择器篇</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>☞ 属性选择器： 
+		[属性名=值] {}
+		[属性名] {}	   匹配对应的属性即可
+		[属性名^=值] {}    以值开头
+		[属性名*=值] {}    包含
+		[属性名$=值] {}	   以值结束
+	
+☞ 结构伪类选择器：
+	  :first-child {}     选中的元素为父元素第一个子元素
+	  :last-child {}	  选中的元素为父元素中最后一个子元素
+	  :nth-child(n) {}    选中的元素为父元素中正数第n个子元素
+	  :nth-last-child(n) {}    选中的元素为父元素中倒数第n个子元素
+
+	  备注；
+			n 的取值大于等于0
+	    n 可以设置预定义的值
+			odd[选中奇数位置的元素]  
+			even【选中偶数位置的元素】
+	    n 可以是一个表达式：
+			an+b的格式
+
+☞ 其他选择器：
+	:target          被锚链接指向的时候会触发该选择器
+	::selection	     当被鼠标选中的时候的样式
+	::first-line	 	 选中第一行
+	::first-letter	 选中第一个字符
+	注意：
+		CSS伪类：用于向某些选择器添加特殊的效果。
+		CSS伪元素：用于将特殊的效果添加到某些选择器。伪元素代表了某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。
+		伪类的效果可以通过添加一个实际的类来达到，而伪元素的效果则需要通过添加一个实际的元素才能达到.
+		CSS3中明确规定: 伪类用单冒号，伪元素用双冒号。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h2 id="css3新特性之颜色渐变"><a href="#css3新特性之颜色渐变" class="header-anchor">#</a> CSS3新特性之颜色渐变</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code> ☞ 线性渐变：
+		1. 开始颜色和结束颜色
+		2. 渐变的方向
+  	3. 渐变的范围
+
+  background-image:  linear-gradient(
+		to right,
+		red,
+		blue
+	);
+
+备注：
+ 	表示方向：
+		1. to + right | top | bottom | left 
+		2. 通过角度表示一个方向
+		  0deg [从下向上渐变] 
+		  90deg【从左向右】
+ 
+ ☞ 径向渐变：
+	/* 径向渐变 */
+	background-image: radial-gradient(
+		100px at center,
+		red,
+		blue
+	);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="_2d转换"><a href="#_2d转换" class="header-anchor">#</a> 2D转换</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>☞ 位移
+ transform: translate(100px,100px);		
+ 备注：
+	  位移是相对元素自身的位置发生位置改变
+
+☞ 旋转
+transform: rotate(60deg);
+  备注：
+   取值为角度
+☞ 缩放
+   transform: scale(0.5,1);
+备注：
+	 取值为倍数关系，缩小大于0小于1，放大设置大于1
+	
+☞ 倾斜
+  transform: skew(30deg,30deg);
+ 	   备注：
+  第一个值代表沿着x轴方向倾斜
+  第二个值代表沿着y轴方向倾斜
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="_3d转换"><a href="#_3d转换" class="header-anchor">#</a> 3D转换</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code> ☞ 位移
+transform: translateX()  translateY()   translateZ()
+
+ ☞ 旋转
+ transform: rotateX(60deg)  rotateY(60deg)  rotateZ(60deg);
+
+ ☞ 缩放
+  transform: scaleX(0.5)  scaleY(1)  scaleZ(1);
+ ☞ 倾斜
+     transform: skewX(30deg) skewY();
+
+ ☞ transform-style: preserve-3d;
+ 将平面图形转换为立体图形
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="css3新特性之动画篇"><a href="#css3新特性之动画篇" class="header-anchor">#</a> CSS3新特性之动画篇</h2> <h3 id="过渡"><a href="#过渡" class="header-anchor">#</a> 过渡</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>补间动画
+
+/* 设置哪些属性要参与到过渡动画效果中： all */
+transition-property: all;
+
+/* 设置过渡执行时间 */
+transition-duration: 1s;
+
+/* 设置过渡延时执行时间 */
+transition-delay: 1s;
+
+/* 设置过渡的速度类型 */transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out;
+
+/*简写模式：*/
+transition: property duration timing-function delay
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="动画"><a href="#动画" class="header-anchor">#</a> 动画</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>/*1.定义动画集 */
+@keyframes  rotate {
+	/* 定义开始状态  0%*/
+	from {
+		transform: rotateZ(0deg);
+	}
+	/* 结束状态 100%*/
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+   注意：
+	1. 如果设置动画集使用的是百分比，那么记住百分比是相对整个动画执行时间的。
+/*调用动画集*/
+	/* 调用动画集名称 */
+	animation-name: ***;
+	/* 设置动画时间 */
+	animation-duration: 1s;
+	/* 动画执行的速度类型 */
+	animation-timing-function: linear;
+	/* 设置动画延时 */
+	animation-delay: 1s;
+	/* 设置动画执行的次数  infinite无限次执行 */
+	animation-iteration-count: infinite;
+	/* 设置动画逆波 */
+	animation-direction: normal | alternative;
+
+	/* 设置动画填充模式 */
+	animation-fill-mode: none | forwards | backwards | both;
+	/* 动画暂停 */
+	animation-play-state: paused | running;
+	
+/* 简写模式	 */
+animation: name duration timing-function delay iteration-count direction;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h2 id="css3新特性之网页布局篇"><a href="#css3新特性之网页布局篇" class="header-anchor">#</a> CSS3新特性之网页布局篇</h2> <h3 id="伸缩布局或者弹性布局【响应式布局】"><a href="#伸缩布局或者弹性布局【响应式布局】" class="header-anchor">#</a> 伸缩布局或者弹性布局【响应式布局】</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>☞ 设置父元素为伸缩盒子【直接父元素】
+   display： flex
+	
+    为什么在伸缩盒子中，子元素会在一行上显示？
+	 1. 子元素是按照伸缩盒子中主轴方向显示
+	 2. 只有伸缩盒子才有主轴和侧轴
+	 3. 主轴： 默认水平从左向右显示
+	 4. 侧轴： 始终要垂直于主轴
+
+☞ 设置伸缩盒子主轴方向（flex-direction）
+  flex-direction: row; 【默认值】
+	flex-direction: row-reverse;
+	flex-direction: column;
+	flex-direction: column-reverse;
+☞ 设置元素在主轴的对齐方式( justify-content)
+/* 设置子元素在主轴方向的对齐方式 */
+	justify-content: flex-start;
+	justify-content: flex-end;
+	justify-content: center;
+	justify-content: space-between;
+	justify-content: space-around;
+
+☞ 设置元素在侧轴的对齐方式 （align-items）
+	align-items: flex-start;
+	align-items: flex-end;
+	align-items: center;
+	/* 默认值 */
+	align-items: stretch;
+
+☞ 设置元素是否换行显示（flex-wrap）
+  1. 在伸缩盒子中所有的元素默认都会在一行上显示
+  2. 如果希望换行：
+	flex-wrap: wrap | nowrap;
+
+☞ 设置元素换行后的对齐方式（ align-content）
+  align-content: flex-start;
+	align-content: flex-end;
+	align-content: center;
+	align-content: space-around;
+	align-content: space-between;
+	/* 换行后的默认值 */
+	align-content: stretch;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h2 id="ohters"><a href="#ohters" class="header-anchor">#</a> Ohters</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>☞ 在元素间隔中添加'、'
+1. :not(:last-child)表示除最后一个伪类元素外的所有元素
+
+&amp;:not(:last-child)::after {
+  content: '、';
+ }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#css3中新特性样式篇" title="CSS3中新特性样式篇">CSS3中新特性样式篇</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#背景" title="背景">背景</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#边框" title="边框">边框</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#文本" title="文本">文本</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#css3新特性之选择器篇" title="CSS3新特性之选择器篇">CSS3新特性之选择器篇</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#css3新特性之颜色渐变" title="CSS3新特性之颜色渐变">CSS3新特性之颜色渐变</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2d转换" title="2D转换">2D转换</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_3d转换" title="3D转换">3D转换</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#css3新特性之动画篇" title="CSS3新特性之动画篇">CSS3新特性之动画篇</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#过渡" title="过渡">过渡</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#动画" title="动画">动画</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#css3新特性之网页布局篇" title="CSS3新特性之网页布局篇">CSS3新特性之网页布局篇</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#伸缩布局或者弹性布局【响应式布局】" title="伸缩布局或者弹性布局【响应式布局】">伸缩布局或者弹性布局【响应式布局】</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#ohters" title="Ohters">Ohters</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8><li class="contact-item" data-v-3d9deeb8><a href="https://github.com/reonce" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-3d9deeb8><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-3d9deeb8></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6ec7b628.js" defer></script><script src="/assets/js/6.22cf8d93.js" defer></script><script src="/assets/js/3.90335b74.js" defer></script><script src="/assets/js/13.4c87bfde.js" defer></script>
+  </body>
+</html>
