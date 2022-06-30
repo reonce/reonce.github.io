@@ -11,6 +11,7 @@ const tagOptions = [
   "感悟",
   "手写代码系列",
   "数据结构与算法",
+  "TypeScript",
 ];
 
 const pathOptions = [
@@ -24,6 +25,7 @@ const pathOptions = [
   "手写代码系列",
   "数据结构与算法",
   "CSS",
+  "TypeScript",
 ];
 
 module.exports = {
