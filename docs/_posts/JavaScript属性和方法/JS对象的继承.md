@@ -1,5 +1,5 @@
 ---
-title: JavaScript的继承（__proto__, prototype, constructor）
+title: JavaScript的继承
 date: 2022-5-28
 author: reonce
 tags: JavaScript,Object
