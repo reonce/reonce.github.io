@@ -13,7 +13,7 @@ rule<span class="token punctuation">.</span>style<span class="token punctuation"
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>删除规则用 <code v-pre>deleteRule</code> 方法，传入要删除的索引即可</p>
 <h2 id="_16-2-3-元素尺寸" tabindex="-1"><a class="header-anchor" href="#_16-2-3-元素尺寸" aria-hidden="true">#</a> 16.2.3 元素尺寸</h2>
 <h3 id="偏移尺寸" tabindex="-1"><a class="header-anchor" href="#偏移尺寸" aria-hidden="true">#</a> 偏移尺寸</h3>
-<p>偏移尺寸的相对元素是 包含它的元素 ，不一定是父元素。 例如： <td> 元素的 包含元素是 <table></p>
+<p>偏移尺寸的相对元素是 包含它的元素 ，不一定是父元素。 例如： <code v-pre>&lt;td /&gt;</code> 元素的 包含元素是 <code v-pre>&lt;table /&gt;</code></p>
 <ul>
 <li>offsetTop 表示元素上边框距离 <strong>包含元素</strong>  (注意不一定是父元素）上边框的像素数</li>
 <li>offsetLeft 表示元素左边框距离 <strong>包含元素</strong> 左边框的像素数</li>
@@ -33,8 +33,8 @@ rule<span class="token punctuation">.</span>style<span class="token punctuation"
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="客户端尺寸" tabindex="-1"><a class="header-anchor" href="#客户端尺寸" aria-hidden="true">#</a> 客户端尺寸</h3>
 <ul>
-<li>clientHeight 表示不含边框的 <strong>内容+内边距</strong> 高度像素数</li>
-<li>clientWidth 表示不含边框的 <strong>内容+内边距</strong>  宽度像素数</li>
+<li><code v-pre>clientHeight</code> 表示不含边框的 <strong>内容+内边距</strong> 高度像素数</li>
+<li><code v-pre>clientWidth</code> 表示不含边框的 <strong>内容+内边距</strong>  宽度像素数</li>
 </ul>
 <h3 id="滚动尺寸" tabindex="-1"><a class="header-anchor" href="#滚动尺寸" aria-hidden="true">#</a> 滚动尺寸</h3>
 <p>滚动尺寸，提供了元素内容滚动距离的信息</p>
@@ -44,9 +44,9 @@ rule<span class="token punctuation">.</span>style<span class="token punctuation"
 <li>scrollLeft 元素距离左侧的滚动偏移量，设置它可以改变元素的水平滚动位置</li>
 <li>scrollWidth 没有滚动条出现时，元素内容的 <strong>总宽度</strong></li>
 </ul>
-<p>其中， scrollHeight 和 scrollWidth 可以用来确定元素内容的总体尺寸</p>
+<p>其中， <code v-pre>scrollHeight</code> 和 <code v-pre>scrollWidth</code> 可以用来确定元素内容的总体尺寸</p>
 <h3 id="确定元素尺寸-getboundingclientrect" tabindex="-1"><a class="header-anchor" href="#确定元素尺寸-getboundingclientrect" aria-hidden="true">#</a> 确定元素尺寸 getBoundingClientRect()</h3>
-<p>调用元素的 getBoundingClientRect() 方法会返回一个 DOMRect 对象，包含 left、top、right、bottom、height、width 六个属性</p>
+<p>调用元素的 <code v-pre>getBoundingClientRect()</code> 方法会返回一个 DOMRect 对象，包含 left、top、right、bottom、height、width 六个属性</p>
 <ul>
 <li>left <strong>元素左侧</strong>距离页面左侧的距离</li>
 <li>right <strong>元素右侧</strong>距离页面左侧的距离</li>

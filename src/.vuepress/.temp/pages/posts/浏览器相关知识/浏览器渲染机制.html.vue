@@ -27,9 +27,7 @@
 <p><strong>把CSS转换为浏览器能理解的结构</strong></p>
 <p>css样式来源主要来自一下三种：</p>
 <ul>
-<li>
-<style>标记内的css
-</li>
+<li><code v-pre>&lt;style&gt;</code> 标记内的css</li>
 <li>元素的style属性内嵌的css</li>
 <li>通过link引用的外部css文件</li>
 </ul>
@@ -39,7 +37,7 @@
 <p><strong>转换样式表中的属性值，使其标准化</strong></p>
 <p>实际上，css代码中的很多属性值，比如：em、blue、bold，渲染引擎是不易理解的，需要把一些不容易理解的值，转换为标准值。有点像babel把ES6的代码转换成ES5的，让执行器理解“新代码”；</p>
 <p>通常标准是把一些属性转换成一个“<strong>具体的值</strong>”；</p>
-<p>例如： 2em—&gt;32px; blue —&gt;rgb(0, 0, 255); bold —&gt;700;</p>
+<p>例如： <code v-pre>2em—&gt;32px; blue —&gt;rgb(0, 0, 255); bold —&gt;700 </code>;</p>
 </li>
 <li>
 <p><strong>计算DOM树中每个节点的具体样式</strong></p>
@@ -58,7 +56,7 @@
 <ul>
 <li>
 <p><strong>拥有层叠上下文属性的元素会被提升为单独的一层。</strong></p>
-<p>例如： position:fixed、z-index:2、fliter:blue(5px)、opacitty:0.5等，这些属性被称为层叠上下文属性。会按照自身优先级垂直分布在一个二维平面的Z轴上</p>
+<p>例如： <code v-pre>position:fixed、z-index:2、fliter:blue(5px)、opacitty:0.5</code>等，这些属性被称为层叠上下文属性。会按照自身优先级垂直分布在一个二维平面的Z轴上</p>
 </li>
 <li>
 <p><strong>需要裁剪(clip)的地方也会创建图层</strong></p>

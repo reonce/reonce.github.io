@@ -1,10 +1,10 @@
 # **DOCTYPE的作用，标准模式怪异模式区别**
 
-<!DCOTYPE html>
+`<!DCOTYPE html>`
 
 doctype对大小写不敏感，用于生命hmtl或者xml的浏览器渲染模式
 
-声明了<!DCOTYPE html>的，被认为执行浏览器标准模式。
+声明了`<!DCOTYPE html>`的，被认为执行浏览器标准模式。
 
 ## **概念**
 
@@ -24,7 +24,10 @@ doctype对大小写不敏感，用于生命hmtl或者xml的浏览器渲染模式
 4）内联元素的尺寸：标准模式下， inline元素无法自定义大小，怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸
 5）元素溢出的处理：标准模式下，overflow默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容声明。
 
+
+~~~html
 <!DCOTYPE html>  
+~~~
 
 doctype对大小写不敏感，用于生命hmtl或者xml的浏览器渲染模式
 

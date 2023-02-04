@@ -1,7 +1,7 @@
 <template><div><h1 id="doctype的作用-标准模式怪异模式区别" tabindex="-1"><a class="header-anchor" href="#doctype的作用-标准模式怪异模式区别" aria-hidden="true">#</a> <strong>DOCTYPE的作用，标准模式怪异模式区别</strong></h1>
-<!DCOTYPE html>
+<p><code v-pre>&lt;!DCOTYPE html&gt;</code></p>
 <p>doctype对大小写不敏感，用于生命hmtl或者xml的浏览器渲染模式</p>
-<p>声明了<!DCOTYPE html>的，被认为执行浏览器标准模式。</p>
+<p>声明了<code v-pre>&lt;!DCOTYPE html&gt;</code>的，被认为执行浏览器标准模式。</p>
 <h2 id="概念" tabindex="-1"><a class="header-anchor" href="#概念" aria-hidden="true">#</a> <strong>概念</strong></h2>
 <p>标准模式页面会按照HTML，CSS的定义渲染，而在怪异模式就是浏览器为了兼容很早之前针对旧版本浏览器设计，并未严格遵循W3C标准而产生的一种页面渲染模式。浏览器基于页面中文件类型描述去渲染，如果存在一个完整的DOCTYPE则浏览器将会采用标准模式，如果缺失就会采用怪异模式</p>
 <h2 id="区别" tabindex="-1"><a class="header-anchor" href="#区别" aria-hidden="true">#</a> <strong>区别</strong></h2>
@@ -12,8 +12,8 @@
 <p>元素中的字体：CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性
 4）内联元素的尺寸：标准模式下， inline元素无法自定义大小，怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸
 5）元素溢出的处理：标准模式下，overflow默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容声明。</p>
-<!DCOTYPE html>  
-<p>doctype对大小写不敏感，用于生命hmtl或者xml的浏览器渲染模式</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!DCOTYPE</span> <span class="token attr-name">html</span><span class="token punctuation">></span></span>  
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>doctype对大小写不敏感，用于生命hmtl或者xml的浏览器渲染模式</p>
 <p>声明了</p>
 </div></template>
 

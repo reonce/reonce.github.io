@@ -2,11 +2,11 @@
 
  开发业务中，实现了一个顶部的字体，设置了和设计图一样的宽度和字体：
 
-![image-20211221152043915](C:\Users\newrank\AppData\Roaming\Typora\typora-user-images\image-20211221152043915.png)
+
 
 但是拿给设计看之后，他的电脑上是这个样子的：
 
-![image-20211221152125339](C:\Users\newrank\AppData\Roaming\Typora\typora-user-images\image-20211221152125339.png)
+
 
 纳尼！！？ 经典的我电脑上没问题。 用附近同事的电脑看，都和我的呈现效果一致。
 
@@ -27,7 +27,7 @@
 
 原因是`DINPro Medium`字体主要是数字和符号相关的，因此可能出现一段文字命中两次的现象。效果如下：
 
-![image-20211221153015808](C:\Users\newrank\AppData\Roaming\Typora\typora-user-images\image-20211221153015808.png)
+
 
 在来看我们的系统配置，`-apple-system, BlinkMacSystemFont,`两种苹果字体，没有命中，于是到了`'PingFang SC'`字体，设计的同事当然下载了许多奇奇怪怪的字体，他的电脑上命中的就是这个字体。
 

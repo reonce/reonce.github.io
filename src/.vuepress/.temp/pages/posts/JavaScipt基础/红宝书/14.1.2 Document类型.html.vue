@@ -1,17 +1,17 @@
 <template><div><h1 id="_14-1-2-document类型" tabindex="-1"><a class="header-anchor" href="#_14-1-2-document类型" aria-hidden="true">#</a> 14.1.2 Document类型</h1>
-<p>Document类型是JS中表示文档的类型。提供了两种方法获取HTML中的<html>元素，分别是 <code v-pre>document.documentElement</code>和<code v-pre>document.childNodes</code>的唯一玄素。document的body属性指向body，也比较常用。</p>
-<p>上一节提到的操作node类型节点的方法，并不能用在document对象上，因为document对象是只读的，并且只存在一个Element类型的子节点，就是<html></p>
+<p>Document类型是JS中表示文档的类型。提供了两种方法获取HTML中的<html>元素，分别是 <code v-pre>document.documentElement</code>和<code v-pre>document.childNodes</code>的唯一玄素。<code v-pre>document</code>的<code v-pre>body</code>属性指向 <code v-pre>body</code>，也比较常用。</p>
+<p>上一节提到的操作node类型节点的方法，并不能用在 <code v-pre>document</code>对象上，因为document对象是只读的，并且只存在一个<code v-pre>Element</code>类型的子节点，就是<html></p>
 <h2 id="文档信息属性" tabindex="-1"><a class="header-anchor" href="#文档信息属性" aria-hidden="true">#</a> 文档信息属性</h2>
-<p>document的文档信息属性有 title、URL、domain、referrer</p>
+<p><code v-pre>document</code> 的文档信息属性有 title、URL、domain、referrer</p>
 <h3 id="title" tabindex="-1"><a class="header-anchor" href="#title" aria-hidden="true">#</a> title</h3>
-<p>这个属性可以读写，表示浏览器窗口的标题栏，修改后标题也会直接改变在浏览器标题处。但是，修改属性并不会改变<title>元素</p>
+<p>这个属性可以读写，表示浏览器窗口的标题栏，修改后标题也会直接改变在浏览器标题处。但是，修改属性并不会改变<code v-pre>&lt;title&gt;</code>元素</p>
 <h3 id="url" tabindex="-1"><a class="header-anchor" href="#url" aria-hidden="true">#</a> URL</h3>
 <p>返回档期那页面的完整URL，只读</p>
 <h3 id="domain" tabindex="-1"><a class="header-anchor" href="#domain" aria-hidden="true">#</a> domain</h3>
 <p>这个属性返回了URL的域名，可以进行有限制的设置：</p>
 <ol>
 <li>只能改同域名</li>
-<li>放松修改后就不能在收紧了。例如 <a href="http://p2p.wrox.com" target="_blank" rel="noopener noreferrer">p2p.wrox.com<ExternalLinkIcon/></a> 变成  wrox.com后就不能变回去了</li>
+<li>放松修改后就不能在收紧了。例如 <code v-pre>p2p.wrox.com</code> 变成  <code v-pre>wrox.com</code>后就不能变回去了</li>
 </ol>
 <h3 id="referrer" tabindex="-1"><a class="header-anchor" href="#referrer" aria-hidden="true">#</a> referrer</h3>
 <p>表示页面的来源地址，无则返回空字符串</p>
@@ -39,7 +39,7 @@
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意结尾部分多了一个反斜杠，<strong>&lt;/script&gt;</strong>。如果不加这个反斜杠，会被上面的<strong>script</strong> 起始标签认为是结束标签，引发包裹错误</p>
 <blockquote>
-<p>如果在window.onload之后，页面加载之后再去调用这两个方法，输出的内容会重写整个页面。</p>
+<p>如果在<code v-pre>window.onload</code>之后，页面加载之后再去调用这两个方法，输出的内容会重写整个页面。</p>
 </blockquote>
 <h3 id="open-和close" tabindex="-1"><a class="header-anchor" href="#open-和close" aria-hidden="true">#</a> open()和close（）</h3>
 <p>分别用于打开和关闭网页输出流</p>
