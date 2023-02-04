@@ -3,9 +3,9 @@ home: true
 layout: BlogHome
 icon: home
 title: Blog Home
-heroImage: /logo.svg
-heroText: The name of your blog
-tagline: You can put your slogan here
+heroImage: /head.svg
+heroText: reonce's Blog
+tagline: 你好，欢迎访问饮东的前端博客
 heroFullScreen: true
 projects:
   - icon: project
@@ -23,19 +23,9 @@ projects:
     desc: Detailed description of the book
     link: https://link.to.your.book
 
-  - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
-
-  - icon: friend
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
-
-  - icon: /logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
+  - icon: /head.svg
+    name: 关于我
+    desc: 笔者的自我介绍
     link: https://link.to.your.friend
 
 footer: customize your footer text
