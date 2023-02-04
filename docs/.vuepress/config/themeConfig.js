@@ -6,12 +6,8 @@ module.exports = {
       link: "/",
     },
     {
-      text: "Tags",
-      link: "/tag/",
-    },
-    {
       text: "About",
-      link: "/2021/06/01/关于/",
+      link: "/1970/01/01/about/",
     },
   ],
   footer: {
