@@ -1,0 +1,72 @@
+<template><div><h1 id="跨域执行、http简单复杂请求" tabindex="-1"><a class="header-anchor" href="#跨域执行、http简单复杂请求" aria-hidden="true">#</a> 跨域执行、HTTP简单复杂请求</h1>
+<h1 id="跨域问题" tabindex="-1"><a class="header-anchor" href="#跨域问题" aria-hidden="true">#</a> 跨域问题</h1>
+<p><a href="https://reonce.github.io/2022/06/11/%E8%B7%A8%E5%9F%9F%E8%AF%A6%E8%A7%A3/" target="_blank" rel="noopener noreferrer">https://reonce.github.io/2022/06/11/跨域详解/<ExternalLinkIcon/></a></p>
+<h1 id="跨域的请求在服务端会不会真正执行" tabindex="-1"><a class="header-anchor" href="#跨域的请求在服务端会不会真正执行" aria-hidden="true">#</a> <strong>跨域的请求在服务端会不会真正执行？</strong></h1>
+<h2 id="跨域请求的拦截" tabindex="-1"><a class="header-anchor" href="#跨域请求的拦截" aria-hidden="true">#</a> <strong>跨域请求的拦截</strong></h2>
+<p>这个问题的答案是看情况。</p>
+<p>跨域是浏览器同源策略的影响，对于服务端来说是不受影响的，因此服务端正常来说是正常执行的。</p>
+<p>但是，以上是针对的<strong>简单请求。</strong></p>
+<p>还有一种<strong>复杂请求</strong>，它会正常请求之前发送一个<strong>预检请求</strong></p>
+<h3 id="会处理的原因之一" tabindex="-1"><a class="header-anchor" href="#会处理的原因之一" aria-hidden="true">#</a> 会处理的原因之一：</h3>
+<p>用 <code v-pre>CORS</code> 去解决跨域的大概原理就是客户端会通过服务端返回的一些 <code v-pre>Header</code> 去判断该请求是否允许跨域：</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/e5Dzv8p9XdT4I7sZCLd4Wm7u8s6nlD5ibPfCzWzxBAWdM1jYvXGHT5MBMNYgibxBzz0CpLzBBwGbVq9ibcU6I5Vhw/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" target="_blank" rel="noopener noreferrer">https://mmbiz.qpic.cn/mmbiz_png/e5Dzv8p9XdT4I7sZCLd4Wm7u8s6nlD5ibPfCzWzxBAWdM1jYvXGHT5MBMNYgibxBzz0CpLzBBwGbVq9ibcU6I5Vhw/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1<ExternalLinkIcon/></a></p>
+<p>比如，<code v-pre>Access-Control-Allow-Origin</code> 告诉客户端允许请求在哪些 <code v-pre>Origin</code> 下被发送，这些 <code v-pre>Header</code> 一般都是我们配在 <code v-pre>Server</code> 上的。</p>
+<p>回到上面的问题，如果请求没发出去，这个 <code v-pre>Header</code> 是怎么被带回来的呢？浏览器又咋知道 <code v-pre>Server</code> 允许请求在哪些 <code v-pre>Origin</code> 下跨域发送呢？</p>
+<p>所以，我们又明确了一个信息：请求一定是先发出去，在返回来的时候被浏览器拦截了，如果请求是有返回值的，会被浏览器隐藏掉。</p>
+<h2 id="预检请求" tabindex="-1"><a class="header-anchor" href="#预检请求" aria-hidden="true">#</a> <strong>预检请求</strong></h2>
+<p>那这么说，请求既然被发出去了，服务端又不会拦截，所以一定会被执行喽？</p>
+<p>那当然不是，我们再回来把 <code v-pre>CORS</code> 这张图放大来看：</p>
+<p>我们发现，在发送真正的请求之前，浏览器会先发送一个 <code v-pre>Preflight</code> 请求，也就是我们常说的预检请求，它的方法为 <code v-pre>OPTIONS</code>。</p>
+<p>这也就是为什么有的时候我们明明只发了一个请求，在 <code v-pre>Network</code> 里却看到两个：</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/e5Dzv8p9XdT4I7sZCLd4Wm7u8s6nlD5ibtTnSAddDibkmW8Q4kM8UnD4Xzm5NAL8VOibiaNVt3DN003OUiaicXBYO1zA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" target="_blank" rel="noopener noreferrer">https://mmbiz.qpic.cn/mmbiz_png/e5Dzv8p9XdT4I7sZCLd4Wm7u8s6nlD5ibtTnSAddDibkmW8Q4kM8UnD4Xzm5NAL8VOibiaNVt3DN003OUiaicXBYO1zA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1<ExternalLinkIcon/></a></p>
+<p>预检请求有一个很重要的作用就是 <code v-pre>询问</code> 服务端是不是允许这次请求，如果当前请求是个跨域的请求，你可以理解为：<code v-pre>询问</code> 服务端是不是允许请求在当前域下跨域发送。</p>
+<p>当然，它还有其他的作用，比如 <code v-pre>询问</code> 服务端支持哪些 HTTP 方法。</p>
+<h2 id="预检的过程" tabindex="-1"><a class="header-anchor" href="#预检的过程" aria-hidden="true">#</a> <strong>预检的过程</strong></h2>
+<p>当预检请求到达服务端时，服务端是不会真正执行这个请求的逻辑的，只会在这个请求上返回一些 <code v-pre>HTTP Header</code>，以此来告诉客户端是不是要发送真正的请求。</p>
+<p>如果服务端告诉客户端，请求是允许被发送的，那真正的请求才会发出去。</p>
+<p>比如：我在 <code v-pre>a.com</code> 这个 <code v-pre>origin</code> 下，发送了 <code v-pre>conardli.top</code> 这个域名的请求。</p>
+<p>那么浏览器会先向  <code v-pre>conardli.top</code>  发送一个预检，预检请求不会真正执行这个域名的请求，而是返回了一些 <code v-pre>CORS Header</code>，比如 <code v-pre>Access-Control-Allow-Origin: a.com</code></p>
+<p>这时候浏览器发现， <code v-pre>conardli.top</code> 的请求是允许在 <code v-pre>a.com</code> 下发送的，才会真正发出请求。这时服务端才会真正执行请求接口的逻辑。</p>
+<p>那么，所有的请求都会有预检吗？当然不是。</p>
+<h2 id="简单请求和复杂请求" tabindex="-1"><a class="header-anchor" href="#简单请求和复杂请求" aria-hidden="true">#</a> <strong>简单请求和复杂请求</strong></h2>
+<p>某些请求不会触发 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Preflight_request" target="_blank" rel="noopener noreferrer">CORS 预检请求<ExternalLinkIcon/></a>。MDN称这样的请求为<code v-pre>简单请求</code></p>
+<p>浏览器判定请求是否为简单请求要<strong>同时满足以下四个条件</strong>：</p>
+<ul>
+<li>使用下列方法之一：
+<ul>
+<li><code v-pre>GET</code></li>
+<li><code v-pre>HEAD</code></li>
+<li><code v-pre>POST</code></li>
+</ul>
+</li>
+<li>只使用了如下的安全 <code v-pre>Header</code>，不得人为设置其他 <code v-pre>Header</code>
+<ul>
+<li><code v-pre>text/plain</code></li>
+<li><code v-pre>multipart/form-data</code></li>
+<li><code v-pre>application/x-www-form-urlencoded</code></li>
+<li><code v-pre>Accept</code></li>
+<li><code v-pre>Accept-Language</code></li>
+<li><code v-pre>Content-Language</code></li>
+<li><code v-pre>Content-Type</code> 的值仅限于下列三者之一：
+<ul>
+<li>text/plain</li>
+<li>multipart/form-data</li>
+<li>application/x-www-form-urlencoded</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>请求中的任意 <code v-pre>XMLHttpRequest</code> 对象均没有注册任何事件监听器；<code v-pre>XMLHttpRequest</code> 对象可以使用 <code v-pre>XMLHttpRequest.upload</code> 属性访问。</li>
+<li>请求中没有使用 <code v-pre>ReadableStream</code> 对象。</li>
+</ul>
+<p>所以，如果你发送的是一个简单请求，这个请求不管是不是会受到跨域的限制，只要发出去了，一定会在服务端被执行，浏览器只是隐藏了返回值而已。</p>
+<p>如果是复杂请求，未通过预检则不进行处理，通过则要处理。</p>
+<h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> <strong>总结</strong></h2>
+<p>最后来总结下要点：</p>
+<ul>
+<li>简单请求：不管是否跨域，只要发出去了，一定会到达服务端并被执行，浏览器只会隐藏返回值</li>
+<li>复杂请求：先发预检，预检不会真正执行业务逻辑，预检通过后才会发送真正请求并在服务端被执行</li>
+</ul>
+</div></template>
+
+

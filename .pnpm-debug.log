@@ -1,0 +1,2495 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {},
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/jaydonyin/Library/pnpm/store/v3",
+    "virtualStoreDir": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/create-vuepress-theme-hope/2.0.0-beta.171",
+    "wanted": {
+      "dependentId": ".",
+      "name": "create-vuepress-theme-hope",
+      "rawSpec": "latest"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/create-vuepress-theme-hope/2.0.0-beta.171",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/inquirer/9.1.4",
+    "wanted": {
+      "dependentId": "/create-vuepress-theme-hope/2.0.0-beta.171",
+      "name": "inquirer",
+      "rawSpec": "9.1.4"
+    }
+  },
+  "7 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/inquirer/9.1.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/execa/6.1.0",
+    "wanted": {
+      "dependentId": "/create-vuepress-theme-hope/2.0.0-beta.171",
+      "name": "execa",
+      "rawSpec": "6.1.0"
+    }
+  },
+  "9 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/execa/6.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "10 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/execa/6.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "11 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/create-vuepress-theme-hope/2.0.0-beta.171",
+    "size": 143154,
+    "status": "started"
+  },
+  "12 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/inquirer/9.1.4",
+    "size": 24313,
+    "status": "started"
+  },
+  "13 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/create-vuepress-theme-hope/2.0.0-beta.171",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "14 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/inquirer/9.1.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "15 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cac/6.7.14",
+    "wanted": {
+      "dependentId": "/create-vuepress-theme-hope/2.0.0-beta.171",
+      "name": "cac",
+      "rawSpec": "6.7.14"
+    }
+  },
+  "16 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cac/6.7.14",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "17 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/mute-stream/0.0.8",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "mute-stream",
+      "rawSpec": "0.0.8"
+    }
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mute-stream/0.0.8",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "19 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mute-stream/0.0.8",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cli-cursor/4.0.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "cli-cursor",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "21 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cli-cursor/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/get-stream/6.0.1",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "get-stream",
+      "rawSpec": "^6.0.1"
+    }
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/get-stream/6.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "24 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/get-stream/6.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "25 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/chalk/5.2.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "chalk",
+      "rawSpec": "^5.1.2"
+    }
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chalk/5.2.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "27 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/run-async/2.4.1",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "run-async",
+      "rawSpec": "^2.4.0"
+    }
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/run-async/2.4.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/run-async/2.4.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "30 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/cli-cursor/4.0.0",
+    "size": 2112,
+    "status": "started"
+  },
+  "31 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cli-cursor/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "32 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/human-signals/3.0.1",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "human-signals",
+      "rawSpec": "^3.0.1"
+    }
+  },
+  "33 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/human-signals/3.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "34 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/human-signals/3.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "35 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ansi-escapes/6.0.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "ansi-escapes",
+      "rawSpec": "^6.0.0"
+    }
+  },
+  "36 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ansi-escapes/6.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "37 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/external-editor/3.1.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "external-editor",
+      "rawSpec": "^3.0.3"
+    }
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/external-editor/3.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "39 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/external-editor/3.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "40 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/cac/6.7.14",
+    "size": 21928,
+    "status": "started"
+  },
+  "41 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/wrap-ansi/8.1.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "wrap-ansi",
+      "rawSpec": "^8.0.1"
+    }
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/wrap-ansi/8.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "43 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/chalk/5.2.0",
+    "size": 13351,
+    "status": "started"
+  },
+  "44 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cross-spawn/7.0.3",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "cross-spawn",
+      "rawSpec": "^7.0.3"
+    }
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cross-spawn/7.0.3",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "46 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cross-spawn/7.0.3",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "47 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/through/2.3.8",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "through",
+      "rawSpec": "^2.3.6"
+    }
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/through/2.3.8",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "49 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/through/2.3.8",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "50 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/is-stream/3.0.0",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "is-stream",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-stream/3.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "52 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-stream/3.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "53 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/figures/5.0.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "figures",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/figures/5.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "55 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cac/6.7.14",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "56 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/ansi-escapes/6.0.0",
+    "size": 4995,
+    "status": "started"
+  },
+  "57 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ansi-escapes/6.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "58 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ora/6.1.2",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "ora",
+      "rawSpec": "^6.1.2"
+    }
+  },
+  "59 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ora/6.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chalk/5.2.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "61 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/onetime/6.0.0",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "onetime",
+      "rawSpec": "^6.0.0"
+    }
+  },
+  "62 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/onetime/6.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "63 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/onetime/6.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "64 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/strip-final-newline/3.0.0",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "strip-final-newline",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "65 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/strip-final-newline/3.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "66 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/strip-final-newline/3.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "67 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/merge-stream/2.0.0",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "merge-stream",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "68 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/merge-stream/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "69 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/merge-stream/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "70 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/figures/5.0.0",
+    "size": 7477,
+    "status": "started"
+  },
+  "71 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cli-width/4.0.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "cli-width",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "72 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cli-width/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "73 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/npm-run-path/5.1.0",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "npm-run-path",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "74 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/npm-run-path/5.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "75 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/npm-run-path/5.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "76 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/ora/6.1.2",
+    "size": 7613,
+    "status": "started"
+  },
+  "77 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/wrap-ansi/8.1.0",
+    "size": 4444,
+    "status": "started"
+  },
+  "78 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/wrap-ansi/8.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "79 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ora/6.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "80 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/figures/5.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "81 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/cli-width/4.0.0",
+    "size": 2613,
+    "status": "started"
+  },
+  "82 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cli-width/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "83 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/string-width/5.1.2",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "string-width",
+      "rawSpec": "^5.1.2"
+    }
+  },
+  "84 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/string-width/5.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "85 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/string-width/5.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "86 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/signal-exit/3.0.7",
+    "wanted": {
+      "dependentId": "/execa/6.1.0",
+      "name": "signal-exit",
+      "rawSpec": "^3.0.7"
+    }
+  },
+  "87 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/signal-exit/3.0.7",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "88 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/signal-exit/3.0.7",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "89 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/strip-ansi/7.0.1",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "strip-ansi",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "90 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/strip-ansi/7.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "91 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/strip-ansi/7.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "92 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/mimic-fn/4.0.0",
+    "wanted": {
+      "dependentId": "/onetime/6.0.0",
+      "name": "mimic-fn",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "93 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mimic-fn/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "94 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mimic-fn/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "95 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/which/2.0.2",
+    "wanted": {
+      "dependentId": "/cross-spawn/7.0.3",
+      "name": "which",
+      "rawSpec": "^2.0.1"
+    }
+  },
+  "96 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/which/2.0.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "97 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/which/2.0.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "98 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/path-key/3.1.1",
+    "wanted": {
+      "dependentId": "/cross-spawn/7.0.3",
+      "name": "path-key",
+      "rawSpec": "^3.1.0"
+    }
+  },
+  "99 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/path-key/4.0.0",
+    "wanted": {
+      "dependentId": "/npm-run-path/5.1.0",
+      "name": "path-key",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "100 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/path-key/3.1.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "101 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/path-key/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "102 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/path-key/3.1.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "103 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/path-key/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "104 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/rxjs/7.8.0",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "rxjs",
+      "rawSpec": "^7.5.7"
+    }
+  },
+  "105 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rxjs/7.8.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "106 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rxjs/7.8.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "107 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/shebang-command/2.0.0",
+    "wanted": {
+      "dependentId": "/cross-spawn/7.0.3",
+      "name": "shebang-command",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "108 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/shebang-command/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "109 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/shebang-command/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "110 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/shebang-regex/3.0.0",
+    "wanted": {
+      "dependentId": "/shebang-command/2.0.0",
+      "name": "shebang-regex",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "111 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/shebang-regex/3.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "112 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/shebang-regex/3.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "113 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/lodash/4.17.21",
+    "wanted": {
+      "dependentId": "/inquirer/9.1.4",
+      "name": "lodash",
+      "rawSpec": "^4.17.21"
+    }
+  },
+  "114 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/lodash/4.17.21",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "115 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/string-width/5.1.2",
+    "wanted": {
+      "dependentId": "/wrap-ansi/8.1.0",
+      "name": "string-width",
+      "rawSpec": "^5.0.1"
+    }
+  },
+  "116 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/strip-ansi/7.0.1",
+    "wanted": {
+      "dependentId": "/wrap-ansi/8.1.0",
+      "name": "strip-ansi",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "117 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/chalk/5.2.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "chalk",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "118 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cli-cursor/4.0.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "cli-cursor",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "119 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/strip-ansi/7.0.1",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "strip-ansi",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "120 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/lodash/4.17.21",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "121 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/isexe/2.0.0",
+    "wanted": {
+      "dependentId": "/which/2.0.2",
+      "name": "isexe",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "122 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/isexe/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "123 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/isexe/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "124 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/wcwidth/1.0.1",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "wcwidth",
+      "rawSpec": "^1.0.1"
+    }
+  },
+  "125 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/wcwidth/1.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "126 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/strip-ansi/7.0.1",
+    "wanted": {
+      "dependentId": "/string-width/5.1.2",
+      "name": "strip-ansi",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "127 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "wanted": {
+      "dependentId": "/figures/5.0.0",
+      "name": "is-unicode-supported",
+      "rawSpec": "^1.2.0"
+    }
+  },
+  "128 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "is-unicode-supported",
+      "rawSpec": "^1.1.0"
+    }
+  },
+  "129 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "130 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "131 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eastasianwidth/0.2.0",
+    "wanted": {
+      "dependentId": "/string-width/5.1.2",
+      "name": "eastasianwidth",
+      "rawSpec": "^0.2.0"
+    }
+  },
+  "132 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eastasianwidth/0.2.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "133 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eastasianwidth/0.2.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "134 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/log-symbols/5.1.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "log-symbols",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "135 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/log-symbols/5.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "136 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ansi-styles/6.2.1",
+    "wanted": {
+      "dependentId": "/wrap-ansi/8.1.0",
+      "name": "ansi-styles",
+      "rawSpec": "^6.1.0"
+    }
+  },
+  "137 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ansi-styles/6.2.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "138 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ansi-styles/6.2.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "139 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/escape-string-regexp/5.0.0",
+    "wanted": {
+      "dependentId": "/figures/5.0.0",
+      "name": "escape-string-regexp",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "140 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/escape-string-regexp/5.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "141 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/restore-cursor/4.0.0",
+    "wanted": {
+      "dependentId": "/cli-cursor/4.0.0",
+      "name": "restore-cursor",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "142 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/restore-cursor/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "143 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/onetime/5.1.2",
+    "wanted": {
+      "dependentId": "/restore-cursor/4.0.0",
+      "name": "onetime",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "144 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/signal-exit/3.0.7",
+    "wanted": {
+      "dependentId": "/restore-cursor/4.0.0",
+      "name": "signal-exit",
+      "rawSpec": "^3.0.2"
+    }
+  },
+  "145 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/onetime/5.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "146 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/mimic-fn/2.1.0",
+    "wanted": {
+      "dependentId": "/onetime/5.1.2",
+      "name": "mimic-fn",
+      "rawSpec": "^2.1.0"
+    }
+  },
+  "147 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mimic-fn/2.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "148 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cli-spinners/2.7.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "cli-spinners",
+      "rawSpec": "^2.6.1"
+    }
+  },
+  "149 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cli-spinners/2.7.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "150 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mimic-fn/2.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "151 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/onetime/5.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "152 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/wcwidth/1.0.1",
+    "size": 5814,
+    "status": "started"
+  },
+  "153 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "size": 1973,
+    "status": "started"
+  },
+  "154 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "155 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/log-symbols/5.1.0",
+    "size": 2251,
+    "status": "started"
+  },
+  "156 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/log-symbols/5.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "157 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ansi-regex/6.0.1",
+    "wanted": {
+      "dependentId": "/strip-ansi/7.0.1",
+      "name": "ansi-regex",
+      "rawSpec": "^6.0.1"
+    }
+  },
+  "158 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ansi-regex/6.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "159 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ansi-regex/6.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "160 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/iconv-lite/0.4.24",
+    "wanted": {
+      "dependentId": "/external-editor/3.1.0",
+      "name": "iconv-lite",
+      "rawSpec": "^0.4.24"
+    }
+  },
+  "161 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/iconv-lite/0.4.24",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "162 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/iconv-lite/0.4.24",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "163 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tmp/0.0.33",
+    "wanted": {
+      "dependentId": "/external-editor/3.1.0",
+      "name": "tmp",
+      "rawSpec": "^0.0.33"
+    }
+  },
+  "164 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tmp/0.0.33",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "165 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tmp/0.0.33",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "166 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/bl/5.1.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "bl",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "167 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/bl/5.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "168 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/cli-spinners/2.7.0",
+    "size": 6115,
+    "status": "started"
+  },
+  "169 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cli-spinners/2.7.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "170 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tslib/2.5.0",
+    "wanted": {
+      "dependentId": "/rxjs/7.8.0",
+      "name": "tslib",
+      "rawSpec": "^2.1.0"
+    }
+  },
+  "171 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "172 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "173 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/emoji-regex/9.2.2",
+    "wanted": {
+      "dependentId": "/string-width/5.1.2",
+      "name": "emoji-regex",
+      "rawSpec": "^9.2.2"
+    }
+  },
+  "174 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/emoji-regex/9.2.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "175 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/emoji-regex/9.2.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "176 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/type-fest/3.5.5",
+    "wanted": {
+      "dependentId": "/ansi-escapes/6.0.0",
+      "name": "type-fest",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "177 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/type-fest/3.5.5",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "178 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/escape-string-regexp/5.0.0",
+    "size": 1964,
+    "status": "started"
+  },
+  "179 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/restore-cursor/4.0.0",
+    "size": 1813,
+    "status": "started"
+  },
+  "180 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/restore-cursor/4.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "181 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/type-fest/3.5.5",
+    "size": 70254,
+    "status": "started"
+  },
+  "182 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/wcwidth/1.0.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "183 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/escape-string-regexp/5.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "184 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/bl/5.1.0",
+    "size": 17755,
+    "status": "started"
+  },
+  "185 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/bl/5.1.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "186 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/is-interactive/2.0.0",
+    "wanted": {
+      "dependentId": "/ora/6.1.2",
+      "name": "is-interactive",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "187 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-interactive/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "188 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/chalk/5.2.0",
+    "wanted": {
+      "dependentId": "/log-symbols/5.1.0",
+      "name": "chalk",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "189 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/is-unicode-supported/1.3.0",
+    "wanted": {
+      "dependentId": "/log-symbols/5.1.0",
+      "name": "is-unicode-supported",
+      "rawSpec": "^1.1.0"
+    }
+  },
+  "190 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/chardet/0.7.0",
+    "wanted": {
+      "dependentId": "/external-editor/3.1.0",
+      "name": "chardet",
+      "rawSpec": "^0.7.0"
+    }
+  },
+  "191 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chardet/0.7.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "192 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chardet/0.7.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "193 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/defaults/1.0.4",
+    "wanted": {
+      "dependentId": "/wcwidth/1.0.1",
+      "name": "defaults",
+      "rawSpec": "^1.0.3"
+    }
+  },
+  "194 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/defaults/1.0.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "195 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/is-interactive/2.0.0",
+    "size": 2391,
+    "status": "started"
+  },
+  "196 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/inherits/2.0.4",
+    "wanted": {
+      "dependentId": "/bl/5.1.0",
+      "name": "inherits",
+      "rawSpec": "^2.0.4"
+    }
+  },
+  "197 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/inherits/2.0.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "198 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/is-interactive/2.0.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "199 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/inherits/2.0.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "200 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/type-fest/3.5.5",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "201 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/defaults/1.0.4",
+    "size": 1978,
+    "status": "started"
+  },
+  "202 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/defaults/1.0.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "203 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/safer-buffer/2.1.2",
+    "wanted": {
+      "dependentId": "/iconv-lite/0.4.24",
+      "name": "safer-buffer",
+      "rawSpec": ">= 2.1.2 < 3"
+    }
+  },
+  "204 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/safer-buffer/2.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "205 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/safer-buffer/2.1.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "206 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/readable-stream/3.6.0",
+    "wanted": {
+      "dependentId": "/bl/5.1.0",
+      "name": "readable-stream",
+      "rawSpec": "^3.4.0"
+    }
+  },
+  "207 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/readable-stream/3.6.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "208 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/readable-stream/3.6.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "209 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/clone/1.0.4",
+    "wanted": {
+      "dependentId": "/defaults/1.0.4",
+      "name": "clone",
+      "rawSpec": "^1.0.2"
+    }
+  },
+  "210 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/clone/1.0.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "211 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/os-tmpdir/1.0.2",
+    "wanted": {
+      "dependentId": "/tmp/0.0.33",
+      "name": "os-tmpdir",
+      "rawSpec": "~1.0.2"
+    }
+  },
+  "212 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/os-tmpdir/1.0.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "213 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/os-tmpdir/1.0.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "214 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/clone/1.0.4",
+    "size": 4457,
+    "status": "started"
+  },
+  "215 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/clone/1.0.4",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "216 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/buffer/6.0.3",
+    "wanted": {
+      "dependentId": "/bl/5.1.0",
+      "name": "buffer",
+      "rawSpec": "^6.0.3"
+    }
+  },
+  "217 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/buffer/6.0.3",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "218 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/inherits/2.0.4",
+    "wanted": {
+      "dependentId": "/readable-stream/3.6.0",
+      "name": "inherits",
+      "rawSpec": "^2.0.3"
+    }
+  },
+  "219 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/util-deprecate/1.0.2",
+    "wanted": {
+      "dependentId": "/readable-stream/3.6.0",
+      "name": "util-deprecate",
+      "rawSpec": "^1.0.1"
+    }
+  },
+  "220 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/util-deprecate/1.0.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "221 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/util-deprecate/1.0.2",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "222 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/buffer/6.0.3",
+    "size": 23108,
+    "status": "started"
+  },
+  "223 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/string_decoder/1.3.0",
+    "wanted": {
+      "dependentId": "/readable-stream/3.6.0",
+      "name": "string_decoder",
+      "rawSpec": "^1.1.1"
+    }
+  },
+  "224 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/string_decoder/1.3.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "225 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/string_decoder/1.3.0",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "226 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ieee754/1.2.1",
+    "wanted": {
+      "dependentId": "/buffer/6.0.3",
+      "name": "ieee754",
+      "rawSpec": "^1.2.1"
+    }
+  },
+  "227 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ieee754/1.2.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "228 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ieee754/1.2.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "229 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/base64-js/1.5.1",
+    "wanted": {
+      "dependentId": "/buffer/6.0.3",
+      "name": "base64-js",
+      "rawSpec": "^1.3.1"
+    }
+  },
+  "230 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/base64-js/1.5.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "231 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/base64-js/1.5.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "232 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/safe-buffer/5.2.1",
+    "wanted": {
+      "dependentId": "/string_decoder/1.3.0",
+      "name": "safe-buffer",
+      "rawSpec": "~5.2.0"
+    }
+  },
+  "233 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/safe-buffer/5.2.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "resolved"
+  },
+  "234 debug pnpm:package-manifest": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "updated": {
+      "dependencies": {
+        "create-vuepress-theme-hope": "2.0.0-beta.171"
+      }
+    }
+  },
+  "235 debug pnpm:package-manifest": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "updated": {
+      "dependencies": {
+        "create-vuepress-theme-hope": "2.0.0-beta.171"
+      }
+    }
+  },
+  "236 debug pnpm:stage": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "stage": "resolution_done"
+  },
+  "237 debug pnpm:stats": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "removed": 0
+  },
+  "238 debug pnpm:stage": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "stage": "importing_started"
+  },
+  "239 debug pnpm:stats": {
+    "added": 66,
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104"
+  },
+  "240 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/safe-buffer/5.2.1",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "found_in_store"
+  },
+  "241 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cac@6.7.14/node_modules/cac",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/create-vuepress-theme-hope@2.0.0-beta.171/node_modules/cac"
+  },
+  "242 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/execa",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/create-vuepress-theme-hope@2.0.0-beta.171/node_modules/execa"
+  },
+  "243 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/inquirer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/create-vuepress-theme-hope@2.0.0-beta.171/node_modules/inquirer"
+  },
+  "244 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/cross-spawn",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/cross-spawn"
+  },
+  "245 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/get-stream@6.0.1/node_modules/get-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/get-stream"
+  },
+  "246 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/human-signals@3.0.1/node_modules/human-signals",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/human-signals"
+  },
+  "247 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-stream@3.0.0/node_modules/is-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/is-stream"
+  },
+  "248 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/merge-stream@2.0.0/node_modules/merge-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/merge-stream"
+  },
+  "249 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/npm-run-path@5.1.0/node_modules/npm-run-path",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/npm-run-path"
+  },
+  "250 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@6.0.0/node_modules/onetime",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/onetime"
+  },
+  "251 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/signal-exit@3.0.7/node_modules/signal-exit",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/signal-exit"
+  },
+  "252 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-final-newline@3.0.0/node_modules/strip-final-newline",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/strip-final-newline"
+  },
+  "253 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/path-key@3.1.1/node_modules/path-key",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/path-key"
+  },
+  "254 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-command@2.0.0/node_modules/shebang-command",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/shebang-command"
+  },
+  "255 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/which@2.0.2/node_modules/which",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/which"
+  },
+  "256 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-regex@3.0.0/node_modules/shebang-regex",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-command@2.0.0/node_modules/shebang-regex"
+  },
+  "257 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/isexe@2.0.0/node_modules/isexe",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/which@2.0.2/node_modules/isexe"
+  },
+  "258 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/path-key@4.0.0/node_modules/path-key",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/npm-run-path@5.1.0/node_modules/path-key"
+  },
+  "259 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mimic-fn@4.0.0/node_modules/mimic-fn",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@6.0.0/node_modules/mimic-fn"
+  },
+  "260 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-escapes@6.0.0/node_modules/ansi-escapes",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/ansi-escapes"
+  },
+  "261 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chalk@5.2.0/node_modules/chalk",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/chalk"
+  },
+  "262 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-cursor@4.0.0/node_modules/cli-cursor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/cli-cursor"
+  },
+  "263 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-width@4.0.0/node_modules/cli-width",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/cli-width"
+  },
+  "264 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/external-editor@3.1.0/node_modules/external-editor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/external-editor"
+  },
+  "265 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/figures@5.0.0/node_modules/figures",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/figures"
+  },
+  "266 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/lodash"
+  },
+  "267 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mute-stream@0.0.8/node_modules/mute-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/mute-stream"
+  },
+  "268 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/ora",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/ora"
+  },
+  "269 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/run-async@2.4.1/node_modules/run-async",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/run-async"
+  },
+  "270 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/rxjs@7.8.0/node_modules/rxjs",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/rxjs"
+  },
+  "271 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/string-width",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/string-width"
+  },
+  "272 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/strip-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/strip-ansi"
+  },
+  "273 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/through@2.3.8/node_modules/through",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/through"
+  },
+  "274 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wrap-ansi@8.1.0/node_modules/wrap-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/wrap-ansi"
+  },
+  "275 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/type-fest@3.5.5/node_modules/type-fest",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-escapes@6.0.0/node_modules/type-fest"
+  },
+  "276 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/restore-cursor@4.0.0/node_modules/restore-cursor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-cursor@4.0.0/node_modules/restore-cursor"
+  },
+  "277 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@5.1.2/node_modules/onetime",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/restore-cursor@4.0.0/node_modules/onetime"
+  },
+  "278 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/signal-exit@3.0.7/node_modules/signal-exit",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/restore-cursor@4.0.0/node_modules/signal-exit"
+  },
+  "279 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mimic-fn@2.1.0/node_modules/mimic-fn",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@5.1.2/node_modules/mimic-fn"
+  },
+  "280 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chardet@0.7.0/node_modules/chardet",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/external-editor@3.1.0/node_modules/chardet"
+  },
+  "281 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/iconv-lite@0.4.24/node_modules/iconv-lite",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/external-editor@3.1.0/node_modules/iconv-lite"
+  },
+  "282 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tmp@0.0.33/node_modules/tmp",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/external-editor@3.1.0/node_modules/tmp"
+  },
+  "283 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/safer-buffer@2.1.2/node_modules/safer-buffer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/iconv-lite@0.4.24/node_modules/safer-buffer"
+  },
+  "284 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/os-tmpdir@1.0.2/node_modules/os-tmpdir",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tmp@0.0.33/node_modules/os-tmpdir"
+  },
+  "285 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/escape-string-regexp@5.0.0/node_modules/escape-string-regexp",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/figures@5.0.0/node_modules/escape-string-regexp"
+  },
+  "286 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-unicode-supported@1.3.0/node_modules/is-unicode-supported",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/figures@5.0.0/node_modules/is-unicode-supported"
+  },
+  "287 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/bl@5.1.0/node_modules/bl",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/bl"
+  },
+  "288 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chalk@5.2.0/node_modules/chalk",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/chalk"
+  },
+  "289 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-cursor@4.0.0/node_modules/cli-cursor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/cli-cursor"
+  },
+  "290 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-spinners@2.7.0/node_modules/cli-spinners",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/cli-spinners"
+  },
+  "291 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-interactive@2.0.0/node_modules/is-interactive",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/is-interactive"
+  },
+  "292 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-unicode-supported@1.3.0/node_modules/is-unicode-supported",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/is-unicode-supported"
+  },
+  "293 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/log-symbols@5.1.0/node_modules/log-symbols",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/log-symbols"
+  },
+  "294 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/strip-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/strip-ansi"
+  },
+  "295 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wcwidth@1.0.1/node_modules/wcwidth",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/wcwidth"
+  },
+  "296 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/buffer@6.0.3/node_modules/buffer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/bl@5.1.0/node_modules/buffer"
+  },
+  "297 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/bl@5.1.0/node_modules/inherits"
+  },
+  "298 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/readable-stream@3.6.0/node_modules/readable-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/bl@5.1.0/node_modules/readable-stream"
+  },
+  "299 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/base64-js@1.5.1/node_modules/base64-js",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/buffer@6.0.3/node_modules/base64-js"
+  },
+  "300 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ieee754@1.2.1/node_modules/ieee754",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/buffer@6.0.3/node_modules/ieee754"
+  },
+  "301 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/readable-stream@3.6.0/node_modules/inherits"
+  },
+  "302 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string_decoder@1.3.0/node_modules/string_decoder",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/readable-stream@3.6.0/node_modules/string_decoder"
+  },
+  "303 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/util-deprecate@1.0.2/node_modules/util-deprecate",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/readable-stream@3.6.0/node_modules/util-deprecate"
+  },
+  "304 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string_decoder@1.3.0/node_modules/safe-buffer"
+  },
+  "305 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chalk@5.2.0/node_modules/chalk",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/log-symbols@5.1.0/node_modules/chalk"
+  },
+  "306 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-unicode-supported@1.3.0/node_modules/is-unicode-supported",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/log-symbols@5.1.0/node_modules/is-unicode-supported"
+  },
+  "307 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/defaults@1.0.4/node_modules/defaults",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wcwidth@1.0.1/node_modules/defaults"
+  },
+  "308 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/clone@1.0.4/node_modules/clone",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/defaults@1.0.4/node_modules/clone"
+  },
+  "309 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tslib@2.5.0/node_modules/tslib",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/rxjs@7.8.0/node_modules/tslib"
+  },
+  "310 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/eastasianwidth@0.2.0/node_modules/eastasianwidth",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/eastasianwidth"
+  },
+  "311 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/emoji-regex@9.2.2/node_modules/emoji-regex",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/emoji-regex"
+  },
+  "312 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/strip-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/strip-ansi"
+  },
+  "313 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-regex@6.0.1/node_modules/ansi-regex",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/ansi-regex"
+  },
+  "314 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-styles@6.2.1/node_modules/ansi-styles",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wrap-ansi@8.1.0/node_modules/ansi-styles"
+  },
+  "315 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/string-width",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wrap-ansi@8.1.0/node_modules/string-width"
+  },
+  "316 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/strip-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wrap-ansi@8.1.0/node_modules/strip-ansi"
+  },
+  "317 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "318 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-regex@3.0.0/node_modules/shebang-regex"
+  },
+  "319 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "320 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-stream@3.0.0/node_modules/is-stream"
+  },
+  "321 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "322 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-command@2.0.0/node_modules/shebang-command"
+  },
+  "323 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "324 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/get-stream@6.0.1/node_modules/get-stream"
+  },
+  "325 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "326 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@6.0.0/node_modules/onetime"
+  },
+  "327 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "328 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/npm-run-path@5.1.0/node_modules/npm-run-path"
+  },
+  "329 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "330 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/merge-stream@2.0.0/node_modules/merge-stream"
+  },
+  "331 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "332 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/path-key@3.1.1/node_modules/path-key"
+  },
+  "333 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "334 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/path-key@4.0.0/node_modules/path-key"
+  },
+  "335 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "336 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cac@6.7.14/node_modules/cac"
+  },
+  "337 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-cursor@4.0.0/node_modules/cli-cursor"
+  },
+  "338 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "339 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/isexe@2.0.0/node_modules/isexe"
+  },
+  "340 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "341 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/which@2.0.2/node_modules/which"
+  },
+  "342 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/signal-exit@3.0.7/node_modules/signal-exit"
+  },
+  "343 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mimic-fn@4.0.0/node_modules/mimic-fn"
+  },
+  "344 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "345 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/execa"
+  },
+  "346 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-escapes@6.0.0/node_modules/ansi-escapes"
+  },
+  "347 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/inquirer"
+  },
+  "348 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/restore-cursor@4.0.0/node_modules/restore-cursor"
+  },
+  "349 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/type-fest@3.5.5/node_modules/type-fest"
+  },
+  "350 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-final-newline@3.0.0/node_modules/strip-final-newline"
+  },
+  "351 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chalk@5.2.0/node_modules/chalk"
+  },
+  "352 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@5.1.2/node_modules/onetime"
+  },
+  "353 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/escape-string-regexp@5.0.0/node_modules/escape-string-regexp"
+  },
+  "354 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/figures@5.0.0/node_modules/figures"
+  },
+  "355 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/safer-buffer@2.1.2/node_modules/safer-buffer"
+  },
+  "356 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/os-tmpdir@1.0.2/node_modules/os-tmpdir"
+  },
+  "357 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/external-editor@3.1.0/node_modules/external-editor"
+  },
+  "358 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chardet@0.7.0/node_modules/chardet"
+  },
+  "359 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mimic-fn@2.1.0/node_modules/mimic-fn"
+  },
+  "360 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tmp@0.0.33/node_modules/tmp"
+  },
+  "361 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-unicode-supported@1.3.0/node_modules/is-unicode-supported"
+  },
+  "362 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "363 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/human-signals@3.0.1/node_modules/human-signals"
+  },
+  "364 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-width@4.0.0/node_modules/cli-width"
+  },
+  "365 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "366 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/cross-spawn"
+  },
+  "367 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/iconv-lite@0.4.24/node_modules/iconv-lite"
+  },
+  "368 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/ora"
+  },
+  "369 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash"
+  },
+  "370 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mute-stream@0.0.8/node_modules/mute-stream"
+  },
+  "371 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/base64-js@1.5.1/node_modules/base64-js"
+  },
+  "372 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits"
+  },
+  "373 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/util-deprecate@1.0.2/node_modules/util-deprecate"
+  },
+  "374 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/bl@5.1.0/node_modules/bl"
+  },
+  "375 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-spinners@2.7.0/node_modules/cli-spinners"
+  },
+  "376 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string_decoder@1.3.0/node_modules/string_decoder"
+  },
+  "377 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-interactive@2.0.0/node_modules/is-interactive"
+  },
+  "378 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ieee754@1.2.1/node_modules/ieee754"
+  },
+  "379 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/log-symbols@5.1.0/node_modules/log-symbols"
+  },
+  "380 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer"
+  },
+  "381 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/defaults@1.0.4/node_modules/defaults"
+  },
+  "382 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wcwidth@1.0.1/node_modules/wcwidth"
+  },
+  "383 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/clone@1.0.4/node_modules/clone"
+  },
+  "384 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/run-async@2.4.1/node_modules/run-async"
+  },
+  "385 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/readable-stream@3.6.0/node_modules/readable-stream"
+  },
+  "386 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wrap-ansi@8.1.0/node_modules/wrap-ansi"
+  },
+  "387 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tslib@2.5.0/node_modules/tslib"
+  },
+  "388 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/eastasianwidth@0.2.0/node_modules/eastasianwidth"
+  },
+  "389 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/string-width"
+  },
+  "390 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/strip-ansi"
+  },
+  "391 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-regex@6.0.1/node_modules/ansi-regex"
+  },
+  "392 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-styles@6.2.1/node_modules/ansi-styles"
+  },
+  "393 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/emoji-regex@9.2.2/node_modules/emoji-regex"
+  },
+  "394 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/through@2.3.8/node_modules/through"
+  },
+  "395 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "396 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/create-vuepress-theme-hope@2.0.0-beta.171/node_modules/create-vuepress-theme-hope"
+  },
+  "397 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/rxjs@7.8.0/node_modules/rxjs"
+  },
+  "398 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/buffer/6.0.3",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "fetched"
+  },
+  "399 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "status": "imported",
+    "to": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/buffer@6.0.3/node_modules/buffer"
+  },
+  "400 debug pnpm:stage": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104",
+    "stage": "importing_done"
+  },
+  "401 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/create-vuepress-theme-hope@2.0.0-beta.171/node_modules/create-vuepress-theme-hope",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/create-vuepress-theme-hope"
+  },
+  "402 debug pnpm:root": {
+    "added": {
+      "dependencyType": "prod",
+      "id": "registry.npmjs.org/create-vuepress-theme-hope/2.0.0-beta.171",
+      "name": "create-vuepress-theme-hope",
+      "realName": "create-vuepress-theme-hope",
+      "version": "2.0.0-beta.171"
+    },
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104"
+  },
+  "403 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cac@6.7.14/node_modules/cac",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/cac"
+  },
+  "404 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/execa@6.1.0/node_modules/execa",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/execa"
+  },
+  "405 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inquirer@9.1.4/node_modules/inquirer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/inquirer"
+  },
+  "406 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/cross-spawn",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/cross-spawn"
+  },
+  "407 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/get-stream@6.0.1/node_modules/get-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/get-stream"
+  },
+  "408 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/human-signals@3.0.1/node_modules/human-signals",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/human-signals"
+  },
+  "409 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-stream@3.0.0/node_modules/is-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/is-stream"
+  },
+  "410 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/merge-stream@2.0.0/node_modules/merge-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/merge-stream"
+  },
+  "411 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/npm-run-path@5.1.0/node_modules/npm-run-path",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/npm-run-path"
+  },
+  "412 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/onetime@6.0.0/node_modules/onetime",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/onetime"
+  },
+  "413 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/signal-exit@3.0.7/node_modules/signal-exit",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/signal-exit"
+  },
+  "414 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-final-newline@3.0.0/node_modules/strip-final-newline",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/strip-final-newline"
+  },
+  "415 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-escapes@6.0.0/node_modules/ansi-escapes",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/ansi-escapes"
+  },
+  "416 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chalk@5.2.0/node_modules/chalk",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/chalk"
+  },
+  "417 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-cursor@4.0.0/node_modules/cli-cursor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/cli-cursor"
+  },
+  "418 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-width@4.0.0/node_modules/cli-width",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/cli-width"
+  },
+  "419 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/external-editor@3.1.0/node_modules/external-editor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/external-editor"
+  },
+  "420 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/figures@5.0.0/node_modules/figures",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/figures"
+  },
+  "421 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/lodash"
+  },
+  "422 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mute-stream@0.0.8/node_modules/mute-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/mute-stream"
+  },
+  "423 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ora@6.1.2/node_modules/ora",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/ora"
+  },
+  "424 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/run-async@2.4.1/node_modules/run-async",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/run-async"
+  },
+  "425 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/rxjs@7.8.0/node_modules/rxjs",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/rxjs"
+  },
+  "426 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string-width@5.1.2/node_modules/string-width",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/string-width"
+  },
+  "427 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/strip-ansi@7.0.1/node_modules/strip-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/strip-ansi"
+  },
+  "428 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/through@2.3.8/node_modules/through",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/through"
+  },
+  "429 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wrap-ansi@8.1.0/node_modules/wrap-ansi",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/wrap-ansi"
+  },
+  "430 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/type-fest@3.5.5/node_modules/type-fest",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/type-fest"
+  },
+  "431 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/restore-cursor@4.0.0/node_modules/restore-cursor",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/restore-cursor"
+  },
+  "432 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/path-key@3.1.1/node_modules/path-key",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/path-key"
+  },
+  "433 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-command@2.0.0/node_modules/shebang-command",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/shebang-command"
+  },
+  "434 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/which@2.0.2/node_modules/which",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/which"
+  },
+  "435 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/chardet@0.7.0/node_modules/chardet",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/chardet"
+  },
+  "436 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/iconv-lite@0.4.24/node_modules/iconv-lite",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/iconv-lite"
+  },
+  "437 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tmp@0.0.33/node_modules/tmp",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/tmp"
+  },
+  "438 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/escape-string-regexp@5.0.0/node_modules/escape-string-regexp",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/escape-string-regexp"
+  },
+  "439 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-unicode-supported@1.3.0/node_modules/is-unicode-supported",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/is-unicode-supported"
+  },
+  "440 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/mimic-fn@4.0.0/node_modules/mimic-fn",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/mimic-fn"
+  },
+  "441 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/bl@5.1.0/node_modules/bl",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/bl"
+  },
+  "442 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/cli-spinners@2.7.0/node_modules/cli-spinners",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/cli-spinners"
+  },
+  "443 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/is-interactive@2.0.0/node_modules/is-interactive",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/is-interactive"
+  },
+  "444 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/log-symbols@5.1.0/node_modules/log-symbols",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/log-symbols"
+  },
+  "445 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/wcwidth@1.0.1/node_modules/wcwidth",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/wcwidth"
+  },
+  "446 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/tslib@2.5.0/node_modules/tslib",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/tslib"
+  },
+  "447 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/eastasianwidth@0.2.0/node_modules/eastasianwidth",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/eastasianwidth"
+  },
+  "448 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/emoji-regex@9.2.2/node_modules/emoji-regex",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/emoji-regex"
+  },
+  "449 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-regex@6.0.1/node_modules/ansi-regex",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/ansi-regex"
+  },
+  "450 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ansi-styles@6.2.1/node_modules/ansi-styles",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/ansi-styles"
+  },
+  "451 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/buffer@6.0.3/node_modules/buffer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/buffer"
+  },
+  "452 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/inherits"
+  },
+  "453 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/readable-stream@3.6.0/node_modules/readable-stream",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/readable-stream"
+  },
+  "454 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/safer-buffer@2.1.2/node_modules/safer-buffer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/safer-buffer"
+  },
+  "455 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/shebang-regex@3.0.0/node_modules/shebang-regex",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/shebang-regex"
+  },
+  "456 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/os-tmpdir@1.0.2/node_modules/os-tmpdir",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/os-tmpdir"
+  },
+  "457 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/defaults@1.0.4/node_modules/defaults",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/defaults"
+  },
+  "458 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/isexe@2.0.0/node_modules/isexe",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/isexe"
+  },
+  "459 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/base64-js@1.5.1/node_modules/base64-js",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/base64-js"
+  },
+  "460 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/ieee754@1.2.1/node_modules/ieee754",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/ieee754"
+  },
+  "461 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/clone@1.0.4/node_modules/clone",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/clone"
+  },
+  "462 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/string_decoder@1.3.0/node_modules/string_decoder",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/string_decoder"
+  },
+  "463 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/util-deprecate@1.0.2/node_modules/util-deprecate",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/util-deprecate"
+  },
+  "464 debug pnpm:link": {
+    "target": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer",
+    "link": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.pnpm/node_modules/safe-buffer"
+  },
+  "465 debug pnpm:summary": {
+    "prefix": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104"
+  },
+  "466 error pnpm": {
+    "shortMessage": "Command failed with exit code 1: /Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.bin/create-vuepress-theme-hope",
+    "command": "/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.bin/create-vuepress-theme-hope",
+    "escapedCommand": "\"/Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.bin/create-vuepress-theme-hope\"",
+    "exitCode": 1,
+    "failed": true,
+    "timedOut": false,
+    "isCanceled": false,
+    "killed": false,
+    "err": {
+      "name": "pnpm",
+      "message": "Command failed with exit code 1: /Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.bin/create-vuepress-theme-hope",
+      "stack": "pnpm: Command failed with exit code 1: /Users/jaydonyin/Library/pnpm/store/v3/tmp/dlx-74104/node_modules/.bin/create-vuepress-theme-hope\n    at makeError (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:22159:17)\n    at handlePromise (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:22730:33)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async Object.handler (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:184005:7)\n    at async /usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:192579:21\n    at async run (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:192553:34)\n    at async runPnpm (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:192771:5)\n    at async /usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:192763:7"
+    }
+  }
+}

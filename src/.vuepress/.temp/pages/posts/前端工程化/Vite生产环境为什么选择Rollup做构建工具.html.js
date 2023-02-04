@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-8b00529c\",\"path\":\"/posts/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/Vite%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Rollup%E5%81%9A%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html\",\"title\":\"\",\"lang\":\"zh-CN\",\"frontmatter\":{\"description\":\"一、Vite生产环境为什么选择Rollup做构建工具。 Vite是一个由原生ESM驱动的Web开发构建工具。在选择构建工具的时候也最好可以选择基于ESM的工具。 Rollup是基于ES2015的JavaScript打包工具。它将小文件打包成一个大文件或者更复杂的库和应用，打包既可用于浏览器和Node.js使用。 Rollup最显著的地方就是能让打包文件体积很小。相比其他JavaScript打包工具，Rollup总能打出更小，更快的包。因为Rollup基于ES2015模块，比Webpack和Browserify使用的CommonJS模块机制更高效。\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://mister-hope.github.io/posts/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/Vite%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Rollup%E5%81%9A%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"饮东的博客\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"一、Vite生产环境为什么选择Rollup做构建工具。 Vite是一个由原生ESM驱动的Web开发构建工具。在选择构建工具的时候也最好可以选择基于ESM的工具。 Rollup是基于ES2015的JavaScript打包工具。它将小文件打包成一个大文件或者更复杂的库和应用，打包既可用于浏览器和Node.js使用。 Rollup最显著的地方就是能让打包文件体积很小。相比其他JavaScript打包工具，Rollup总能打出更小，更快的包。因为Rollup基于ES2015模块，比Webpack和Browserify使用的CommonJS模块机制更高效。\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[]}\"]]},\"headers\":[{\"level\":2,\"title\":\"一、Vite生产环境为什么选择Rollup做构建工具。\",\"slug\":\"一、vite生产环境为什么选择rollup做构建工具。\",\"link\":\"#一、vite生产环境为什么选择rollup做构建工具。\",\"children\":[]},{\"level\":2,\"title\":\"二、Vite为什么不用Rollup的热更新\",\"slug\":\"二、vite为什么不用rollup的热更新\",\"link\":\"#二、vite为什么不用rollup的热更新\",\"children\":[]},{\"level\":2,\"title\":\"三、Vite为什么不用Webpack\",\"slug\":\"三、vite为什么不用webpack\",\"link\":\"#三、vite为什么不用webpack\",\"children\":[]}],\"readingTime\":{\"minutes\":1.85,\"words\":556},\"filePathRelative\":\"posts/前端工程化/Vite生产环境为什么选择Rollup做构建工具.md\",\"excerpt\":\"<h2> 一、Vite生产环境为什么选择Rollup做构建工具。</h2>\\n<p>Vite是一个由原生ESM驱动的Web开发构建工具。在选择构建工具的时候也最好可以选择基于ESM的工具。</p>\\n<p>Rollup是基于ES2015的JavaScript打包工具。它将小文件打包成一个大文件或者更复杂的库和应用，打包既可用于浏览器和Node.js使用。 Rollup最显著的地方就是能让打包文件体积很小。相比其他JavaScript打包工具，Rollup总能打出更小，更快的包。因为Rollup基于ES2015模块，比Webpack和Browserify使用的CommonJS模块机制更高效。</p>\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

@@ -1,0 +1,51 @@
+<template><div><h1 id="第十四章dom-14-1节点层级-node节点" tabindex="-1"><a class="header-anchor" href="#第十四章dom-14-1节点层级-node节点" aria-hidden="true">#</a> 第十四章DOM  14.1节点层级 Node节点</h1>
+<p>由于对BOM整章的学习，现在在心态上已经完全可以去学习DOM了。今天只看完了14.1.1小节，不过也算有所收获，毕竟每晚的时间有限，重在积累。</p>
+<h2 id="dom概念" tabindex="-1"><a class="header-anchor" href="#dom概念" aria-hidden="true">#</a> DOM概念</h2>
+<p>DOM表示由多层节点构成的文档，通过它开发者可以添加、删除和修改页面的各个部分。</p>
+<p>document节点表示每个文档的根节点。</p>
+<h2 id="node类型" tabindex="-1"><a class="header-anchor" href="#node类型" aria-hidden="true">#</a> Node类型</h2>
+<p>DOM Level1中就描述了node的接口，这个接口是面向所有DOM节点的，都必须实现。</p>
+<p>每个节点都存在一个叫做 <strong>nodeType</strong>的属性，表示节点的类型。它由定义好的十二个数值分别表示不同的节点，也就是规范规定的映射。</p>
+<p>例如某个节点的nodeType为1，它就是一个 Node.ElEMENT_NODE（元素节点）</p>
+<h3 id="nodename和nodevalue" tabindex="-1"><a class="header-anchor" href="#nodename和nodevalue" aria-hidden="true">#</a> nodeName和nodeValue</h3>
+<p>这两个属性都保存了节点的信息。他们的值取决于节点的类型，例如对于元素类型的node节点而言，它的nodeName始终等于标签名，nodeValue为null。</p>
+<h3 id="节点关系" tabindex="-1"><a class="header-anchor" href="#节点关系" aria-hidden="true">#</a> 节点关系</h3>
+<p>文档中的所有节点和其他节点都有关系。可以通过一个节点找到另一个节点，它们整体就是一个树结构，能看到子节点数组，能看到兄弟节点（书中叫同胞节点），每个节点有对应的父节点。</p>
+<h4 id="childnodes属性" tabindex="-1"><a class="header-anchor" href="#childnodes属性" aria-hidden="true">#</a> childNodes属性</h4>
+<p>表示节点的子节点集合，注意它不是一个数组，只是个类数组，但它却可以通过中括号访问，也提供了length表示子节点个数。可以通过Array.form等方法转变成一个数组。除了用数组的那种中括号访问，还可以调用 **item()**方法，例如 someNode.chilNodes.item(2)就是查看第三个子元素。</p>
+<h4 id="previoussibling和nextsibling" tabindex="-1"><a class="header-anchor" href="#previoussibling和nextsibling" aria-hidden="true">#</a> previousSibling和nextSibling</h4>
+<p>在兄弟节点中，分别返回当前节点的前一个节点和后一个节点。如果当前节点是第一个，它的<strong>previousSibling</strong>则返回null，next...同理</p>
+<h4 id="firstchild和lastchild" tabindex="-1"><a class="header-anchor" href="#firstchild和lastchild" aria-hidden="true">#</a> firstChild和lastChild</h4>
+<p>分别表示父节点的第一个子节点和最后一个子节点，没有子节点则返回null</p>
+<h4 id="总结-ownerdocument" tabindex="-1"><a class="header-anchor" href="#总结-ownerdocument" aria-hidden="true">#</a> 总结&amp;ownerDocument</h4>
+<p>通过以上这些属性可以发现，通过在同一个文档树中，通过一个节点找到另一个节点是完全可以的。</p>
+<p>还有一个全节点共享的方法，叫做  <strong>ownerDocument</strong> ，这个方法返回这个文档的唯一标识，用来区别于不同的文档树。</p>
+<h3 id="操纵节点" tabindex="-1"><a class="header-anchor" href="#操纵节点" aria-hidden="true">#</a> 操纵节点</h3>
+<p>所有的关系指针都是只读属性，要想操作它们，需要使用规定好的方法。</p>
+<p>需要注意的是，每一个节点在一个文档中都是唯一的。</p>
+<h4 id="appendchild" tabindex="-1"><a class="header-anchor" href="#appendchild" aria-hidden="true">#</a> appendChild</h4>
+<p>这个方法会将一个节点插入到目标节点的子节点的最后一位。</p>
+<p>例如someNode子元素集合插入一个newNode <code v-pre> someNode.appendChild(newNode)</code></p>
+<p>由于节点在文档中的唯一性，假设你插入的节点是目标节点的第一个子节点，那么插入的节点会变成最后一个，第一个子节点会被第二个子节点替代。</p>
+<h4 id="insertbefore" tabindex="-1"><a class="header-anchor" href="#insertbefore" aria-hidden="true">#</a> insertBefore</h4>
+<p>这个方法可以把某个节点插入到目标节点的指定位置。接收两个参数： 需要插入的节点，插入节点位置的下一个节点（参照节点），会把想插入的节点放到参照节点的前面</p>
+<blockquote>
+<p>以上的两种方法都不会删除任何已有节点</p>
+</blockquote>
+<h4 id="replacechild" tabindex="-1"><a class="header-anchor" href="#replacechild" aria-hidden="true">#</a> replaceChild</h4>
+<p>这个方法可以替换原有节点，接收两个传参：要插入的节点、要替换的节点。要替换的节点会返回并从文档中完全移除，被插入的节点所替代。所有的关系指针都会从原节点中复制过来。</p>
+<h4 id="removechild" tabindex="-1"><a class="header-anchor" href="#removechild" aria-hidden="true">#</a> removeChild</h4>
+<p>移除节点，接收一个参数：需要移除的节点，被移除的节点会返回。</p>
+<blockquote>
+<p>以上两种方法会移除节点，从技术上说，他们仍然被同一个文档所拥有，但文档中没有它的位置。有点像后端的打标记假删除，但是此处不清楚有什么实际意义。</p>
+</blockquote>
+<h4 id="clonenode" tabindex="-1"><a class="header-anchor" href="#clonenode" aria-hidden="true">#</a> cloneNode</h4>
+<p>会复制一个节点，接收一个布尔值的传参，这个布尔值表示是否进行深复制。深复制会复制当前节点极其整个DOM树（复制了整个树哦）。如果传入了false，则只会复制该节点，此时这个节点没有任何对文档映射关系，被称为”孤儿节点“，可以通过<strong>appendChild</strong>等上述介绍的方法把它重新添加到文档中。</p>
+<blockquote>
+<p><strong>注意</strong>，复制节点只能复制HTML属性，以及可选的复制子节点DOM树，其他的则一律不复制。例如DOM节点上的JS属性，绑定的事件处理程序等等都不会被复制。看到这个注意，瞬间我觉得这个也挺鸡肋的.....</p>
+</blockquote>
+<h4 id="normalize" tabindex="-1"><a class="header-anchor" href="#normalize" aria-hidden="true">#</a> normalize</h4>
+<p>处理文档子树种的文本节点。由于DOM解析器差异和DOM操作原因，可能会出现并不包含文本的文本节点，或者几个文本节点是兄弟关系。调用 <strong>normalize</strong>方法会监测节点的所有后代，去除空的文本节点和合并相邻的文本节点。</p>
+</div></template>
+
+
