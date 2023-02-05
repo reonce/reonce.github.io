@@ -23,7 +23,7 @@ projects:
   - icon: /head.svg
     name: 关于我
     desc: 笔者的自我介绍
-    link: https://link.to.your.friend
+    link: /intro.html
 
-footer: 
+footer: 晋ICP备2022004665号-1
 ---

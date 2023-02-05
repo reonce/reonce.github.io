@@ -14,13 +14,16 @@ export default hopeTheme({
 
   logo: "/head.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "https://github.com/reonce",
 
-  docsDir: "docs",
+  docsDir: "posts",
+
+  editLink: false,
+  lastUpdated: false,
 
   blog: {
     medias: {
-      GitHub: "https://github.com",
+      GitHub: "https://github.com/reonce",
     },
   },
 
@@ -37,12 +40,12 @@ export default hopeTheme({
       displayFooter: true,
 
       blog: {
-        description: "A FrontEnd programmer",
+        description: "山西临汾人，职业是前端程序员",
         intro: "/intro.html",
       },
 
       metaLocales: {
-        editLink: "Edit this page on GitHub",
+        editLink: "访问我的 GitHub",
       },
     },
 
