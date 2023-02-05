@@ -1,4 +1,4 @@
-## git cz的配置命令
+# git cz的配置命令
 
 ```
 npm install -g commitizen；

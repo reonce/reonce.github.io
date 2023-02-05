@@ -1,4 +1,4 @@
-<template><div><h2 id="js对象中的with语句" tabindex="-1"><a class="header-anchor" href="#js对象中的with语句" aria-hidden="true">#</a> JS对象中的with语句</h2>
+<template><div><h1 id="js对象中的with语句" tabindex="-1"><a class="header-anchor" href="#js对象中的with语句" aria-hidden="true">#</a> JS对象中的with语句</h1>
 <p><code v-pre>with</code>语句的格式如下：</p>
 <div class="language-text line-numbers-mode" data-ext="text"><pre v-pre class="language-text"><code>with (对象) {
   语句;

@@ -1,4 +1,5 @@
-<template><div><h2 id="vite知识调研" tabindex="-1"><a class="header-anchor" href="#vite知识调研" aria-hidden="true">#</a> Vite知识调研</h2>
+<template><div><hr>
+<h1 id="vite知识调研" tabindex="-1"><a class="header-anchor" href="#vite知识调研" aria-hidden="true">#</a> Vite知识调研</h1>
 <ol>
 <li>
 <p>Vite和WebPack的区别，各有哪些优点和不足</p>
@@ -305,6 +306,7 @@ require('antd/lib/button/style');</p>
 <p><a href="https://cn.vitejs.dev/guide/comparisons.html" target="_blank" rel="noopener noreferrer">Vite官方文档-比较<ExternalLinkIcon/></a></p>
 <h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h2>
 <p>Vite 是一个魅力十足的现代化构建工具，尤老师也在各个平台放下狠话，说要替代 Webpack，并怒怼许多vite的负面评论（知乎）。其实 Webpack 在上个世代也是一个贡献非常大的构建工具，只是新特性的出现，出现了可以解决它痛点的解决方案。在我看来，比较理想的方案是开发环境使用vite，生产环境可以使用webpack（vite的Rollup如果优化够好也可以），重难点就是保证它们的一致性以及打包的稳定性。</p>
+<hr>
 </div></template>
 
 

@@ -1,5 +1,4 @@
 <template><div><h2 id="声明变量的三个关键字-var、let、const" tabindex="-1"><a class="header-anchor" href="#声明变量的三个关键字-var、let、const" aria-hidden="true">#</a> 声明变量的三个关键字：var、let、const</h2>
-<p>![image-20220202231554430](/Users/jaydonyin/Library/Application Support/typora-user-images/image-20220202231554430.png)</p>
 <h2 id="var" tabindex="-1"><a class="header-anchor" href="#var" aria-hidden="true">#</a> var</h2>
 <div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token comment">// 函数级作用域</span>
 <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>

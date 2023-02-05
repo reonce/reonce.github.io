@@ -1,4 +1,4 @@
-<template><div><h3 id="async的产生-生成器相关" tabindex="-1"><a class="header-anchor" href="#async的产生-生成器相关" aria-hidden="true">#</a> async的产生，生成器相关</h3>
+<template><div><h1 id="async的产生-生成器相关解读" tabindex="-1"><a class="header-anchor" href="#async的产生-生成器相关解读" aria-hidden="true">#</a> async的产生，生成器相关解读</h1>
 <p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
 <p>async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
 <p>关于 Generator 函数，依次读取两个文件。</p>

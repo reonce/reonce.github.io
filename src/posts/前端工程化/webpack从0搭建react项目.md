@@ -621,7 +621,7 @@ App.jsx 中使用 svg
 ```jsx
 import React from "react";
 import "./App.css";
-import logo from "./assets/head.svg";
+import logo from "./assets/logo.svg";
 
 const App = () => {
   return (

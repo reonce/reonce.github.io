@@ -50,7 +50,6 @@ proxy<span class="token punctuation">.</span>foo<span class="token punctuation">
 <span class="token comment">// true</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>所有捕获器都可以基于自己的参数重建原始操作，但是并被所有捕获器行为都像get()那么简单。因此手动编写代码如法炮制的想法是不现实的。因此全局封装了<strong>Reflect</strong>对象。</p>
 <h4 id="反射api-reflect对象" tabindex="-1"><a class="header-anchor" href="#反射api-reflect对象" aria-hidden="true">#</a> 反射API(Reflect对象)</h4>
-<p>![image-20220207210829594](/Users/jaydonyin/Library/Application Support/typora-user-images/image-20220207210829594.png)</p>
 <p>apply调用函数用的，construct是通过new操作符初始化实例用的。</p>
 <p>其他的十一个都是和对象相关的。例如定义属性、删除属性、访问属性、设置属性等等。</p>
 <p>因此，如果我们想创建一个可以捕获所有方法，然后将每个方法转发给对应反射API的空代理，那么甚至不需要定义处理程序对象：</p>
@@ -79,8 +78,6 @@ proxy<span class="token punctuation">.</span>foo<span class="token punctuation">
 </li>
 <li>
 <p>用一等函数代替操作符</p>
-<figure><img src="/Users/jaydonyin/Desktop/Note-Read/image-20220207221949563.png" alt="image-20220207221949563" tabindex="0" loading="lazy"><figcaption>image-20220207221949563</figcaption></figure>
-<p>![image-20220207222136814](/Users/jaydonyin/Library/Application Support/typora-user-images/image-20220207222136814.png)</p>
 </li>
 </ol>
 <h4 id="捕获器不变式" tabindex="-1"><a class="header-anchor" href="#捕获器不变式" aria-hidden="true">#</a> 捕获器不变式</h4>

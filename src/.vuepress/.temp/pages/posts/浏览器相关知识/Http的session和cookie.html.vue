@@ -1,4 +1,5 @@
-<template><div><p>cookie算是session的一种实现方式。由于http无状态的特性，服务端想要知道是哪个用户请求的接口，就必须有一个标识来确认，服务端通过某种机制获取用户信息，就是一个典型的<strong>session</strong>场景。现在主流的方案是cookie里携带一个session的id标识，服务端拿到这个id后，查询得知是哪个用户调的接口。</p>
+<template><div><h1 id="http的session和cookie" tabindex="-1"><a class="header-anchor" href="#http的session和cookie" aria-hidden="true">#</a> Http的session和cookie</h1>
+<p>cookie算是session的一种实现方式。由于http无状态的特性，服务端想要知道是哪个用户请求的接口，就必须有一个标识来确认，服务端通过某种机制获取用户信息，就是一个典型的<strong>session</strong>场景。现在主流的方案是cookie里携带一个session的id标识，服务端拿到这个id后，查询得知是哪个用户调的接口。</p>
 <blockquote>
 <p>服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Memcached之类的来放 Session。</p>
 </blockquote>

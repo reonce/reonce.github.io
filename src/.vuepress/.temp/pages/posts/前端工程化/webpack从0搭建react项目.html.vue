@@ -445,7 +445,7 @@ export default App<span class="token punctuation">;</span>
 <p>App.jsx 中使用 svg</p>
 <div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">"./App.css"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">"./assets/head.svg"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">"./assets/logo.svg"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>

@@ -1,4 +1,5 @@
-<template><div><h2 id="一、vite生产环境为什么选择rollup做构建工具。" tabindex="-1"><a class="header-anchor" href="#一、vite生产环境为什么选择rollup做构建工具。" aria-hidden="true">#</a> 一、Vite生产环境为什么选择Rollup做构建工具。</h2>
+<template><div><h1 id="vite-的技术选型设计" tabindex="-1"><a class="header-anchor" href="#vite-的技术选型设计" aria-hidden="true">#</a> Vite 的技术选型设计</h1>
+<h2 id="一、vite生产环境为什么选择rollup做构建工具。" tabindex="-1"><a class="header-anchor" href="#一、vite生产环境为什么选择rollup做构建工具。" aria-hidden="true">#</a> 一、Vite生产环境为什么选择Rollup做构建工具。</h2>
 <p>Vite是一个由原生ESM驱动的Web开发构建工具。在选择构建工具的时候也最好可以选择基于ESM的工具。</p>
 <p>Rollup是基于ES2015的JavaScript打包工具。它将小文件打包成一个大文件或者更复杂的库和应用，打包既可用于浏览器和Node.js使用。 Rollup最显著的地方就是能让打包文件体积很小。相比其他JavaScript打包工具，Rollup总能打出更小，更快的包。因为Rollup基于ES2015模块，比Webpack和Browserify使用的CommonJS模块机制更高效。</p>
 <h2 id="二、vite为什么不用rollup的热更新" tabindex="-1"><a class="header-anchor" href="#二、vite为什么不用rollup的热更新" aria-hidden="true">#</a> 二、Vite为什么不用Rollup的热更新</h2>

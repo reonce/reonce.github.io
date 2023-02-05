@@ -5,8 +5,8 @@
 <li>首屏可交互时间</li>
 <li>首次有意义内容渲染时间</li>
 </ol>
-<p>性能检测： <a href="https://developers.google.com/speed/pagespeed/insights" target="_blank" rel="noopener noreferrer">https://developers.google.com/speed/pagespeed/insights<ExternalLinkIcon/></a></p>
-<p>polyfill: <a href="https://polyfill.io/v3/url-builder" target="_blank" rel="noopener noreferrer">https://polyfill.io/v3/url-builder<ExternalLinkIcon/></a></p>
+<p>性能检测： <code v-pre>https://developers.google.com/speed/pagespeed/insights</code></p>
+<p>polyfill: <code v-pre>https://polyfill.io/v3/url-builder</code></p>
 <h2 id="优化方法" tabindex="-1"><a class="header-anchor" href="#优化方法" aria-hidden="true">#</a> 优化方法</h2>
 <h3 id="只请求当前需要的资源" tabindex="-1"><a class="header-anchor" href="#只请求当前需要的资源" aria-hidden="true">#</a> 只请求当前需要的资源</h3>
 <ul>

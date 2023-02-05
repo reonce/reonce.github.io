@@ -4,9 +4,7 @@ import { _ as _export_sfc } from "./plugin-vue_export-helper-cc2b3d55.js";
 const _sfc_main = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   const _component_ExternalLinkIcon = resolveComponent("ExternalLinkIcon");
-  _push(`<div${ssrRenderAttrs(
-    _attrs
-  )}><h1 id="webpack从0搭建react项目" tabindex="-1"><a class="header-anchor" href="#webpack从0搭建react项目" aria-hidden="true">#</a> webpack从0搭建react项目</h1><p>本教程不会涉及到任何的实现原理，只是 <strong>webpack 的使用</strong>和<strong>第三方库的使用</strong></p><h1 id="准备" tabindex="-1"><a class="header-anchor" href="#准备" aria-hidden="true">#</a> 准备</h1><p>后续补齐相关学习资料</p><p>学习之前，你需要做一些知识的了解：</p><ul><li>node 入门（path模块，命令行）</li><li>前端模块化入门</li><li>webpack 入门</li><li>babel 入门</li><li>正则入门</li></ul><p><strong>请务必保证上述内容都至少了解的情况下，再开始学习本教程</strong></p><hr><h1 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h1><p>一般情况下一个新项目来临时，都是通过内部脚手架直接创建项目，如下：</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>npx create-react-app project-name --scripts-version @newrank/react-scripts <span class="token parameter variable">--template</span> @newrank/mamba-pro
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="webpack从0搭建react项目" tabindex="-1"><a class="header-anchor" href="#webpack从0搭建react项目" aria-hidden="true">#</a> webpack从0搭建react项目</h1><p>本教程不会涉及到任何的实现原理，只是 <strong>webpack 的使用</strong>和<strong>第三方库的使用</strong></p><h1 id="准备" tabindex="-1"><a class="header-anchor" href="#准备" aria-hidden="true">#</a> 准备</h1><p>后续补齐相关学习资料</p><p>学习之前，你需要做一些知识的了解：</p><ul><li>node 入门（path模块，命令行）</li><li>前端模块化入门</li><li>webpack 入门</li><li>babel 入门</li><li>正则入门</li></ul><p><strong>请务必保证上述内容都至少了解的情况下，再开始学习本教程</strong></p><hr><h1 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h1><p>一般情况下一个新项目来临时，都是通过内部脚手架直接创建项目，如下：</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>npx create-react-app project-name --scripts-version @newrank/react-scripts <span class="token parameter variable">--template</span> @newrank/mamba-pro
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>但开发时项目里面很多前端的部分都是知其然而不知其所以然，心中自然会有一些疑问：</p><ul><li>不同浏览器的 js 语法兼容怎么处理的？</li><li>最终生成的 js 是怎么到 html 中的？</li><li>不同环境的 webpack 配置怎么实现的？</li><li>...</li></ul><p>通过本教程你可以学会使用 webpack 怎么从零一步一步的搭建一个完整的 react 项目。</p><h1 id="需求" tabindex="-1"><a class="header-anchor" href="#需求" aria-hidden="true">#</a> 需求</h1><p>最终都会通过webpack的打包输出成 html + css + js</p><p>搭建的react项目支持以下基础内容：</p><ul><li><p>ES新语法</p></li><li><p>HTML</p></li><li><p>React</p></li><li><p>本地开发（dev-server）</p></li><li><p>处理文件</p></li><li><ul><li>CSS</li><li>资源</li></ul></li><li><p>区分开发/生产环境</p></li><li><p>修改本地开发域名/端口</p></li><li><p>配置环境变量的获取</p></li><li><p>build 静态资源</p></li><li><p>第三方工具库</p></li><li><ul><li>react-router</li><li>状态管理</li><li>antd</li><li>可视化工具库</li><li>发请求</li></ul></li></ul><h1 id="项目搭建" tabindex="-1"><a class="header-anchor" href="#项目搭建" aria-hidden="true">#</a> 项目搭建</h1><p>教程中所有图片中有 dist 文件夹就是 build文件夹，命名不同而已</p><h2 id="新建项目" tabindex="-1"><a class="header-anchor" href="#新建项目" aria-hidden="true">#</a> 新建项目</h2><figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646017817046-69bfb37e-d05d-4086-8c7a-ed09c8e10d28.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure><h2 id="初始化项目" tabindex="-1"><a class="header-anchor" href="#初始化项目" aria-hidden="true">#</a> 初始化项目</h2><p>npm 是 JavaScript 世界的包管理工具，并且是 Nodejs 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码，管理项目依赖关系。</p><p>包管理工具统一使用 yarn。（npm有点慢）</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">yarn</span> init <span class="token parameter variable">-y</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="使用webpack" tabindex="-1"><a class="header-anchor" href="#使用webpack" aria-hidden="true">#</a> 使用webpack</h2><p>webpack 版本：webpack5</p><p>安装 webpack</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> webpack webpack-cli <span class="token parameter variable">-D</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>项目根目录添加 webpack 配置文件 webpack.config.js</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -302,7 +300,7 @@ export default App<span class="token punctuation">;</span>
   _push(ssrRenderComponent(_component_ExternalLinkIcon, null, null, _parent));
   _push(`</a></p><figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646037362299-28fa1956-b284-47ef-be84-e5f28b5a2faf.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure><p>App.jsx 中使用 svg</p><div class="language-jsx line-numbers-mode" data-ext="jsx"><pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">&quot;./App.css&quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">&quot;./assets/head.svg&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">&quot;./assets/logo.svg&quot;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -393,9 +391,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build 和 yarn start</p><p>自行验证是否正常打包和启动本地服务器</p><h2 id="修改本地开发的域名和端口" tabindex="-1"><a class="header-anchor" href="#修改本地开发的域名和端口" aria-hidden="true">#</a> 修改本地开发的域名和端口</h2><p>添加 webpack 配置</p><p>公司内部项目本地开发时，往往需要用到用户信息，此时就需要修改域名为 <a href="http://xx.newrank.cn" target="_blank" rel="noopener noreferrer">xx.newrank.cn`);
   _push(ssrRenderComponent(_component_ExternalLinkIcon, null, null, _parent));
-  _push(
-    `</a>，<a href="http://xn--6kq01kj5cpwguma170aqtgp4nuo9b66wxvd.newrank.cn" target="_blank" rel="noopener noreferrer">才能在发起请求时将属于.newrank.cn`
-  );
+  _push(`</a>，<a href="http://xn--6kq01kj5cpwguma170aqtgp4nuo9b66wxvd.newrank.cn" target="_blank" rel="noopener noreferrer">才能在发起请求时将属于.newrank.cn`);
   _push(ssrRenderComponent(_component_ExternalLinkIcon, null, null, _parent));
   _push(`</a> 的 cookies 带到请求 header 中，从而得到接口返回的用户信息。</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>common<span class="token punctuation">,</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -765,13 +761,10 @@ axiosFetchUser<span class="token punctuation">.</span>interceptors<span class="t
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(
-    "../pages/posts/前端工程化/webpack从0搭建react项目.html.vue"
-  );
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("../pages/posts/前端工程化/webpack从0搭建react项目.html.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const webpack_0__react___html = /* @__PURE__ */ _export_sfc(_sfc_main, [
-  ["ssrRender", _sfc_ssrRender],
-  ["__file", "webpack从0搭建react项目.html.vue"],
-]);
-export { webpack_0__react___html as default };
+const webpack_0__react___html = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender], ["__file", "webpack从0搭建react项目.html.vue"]]);
+export {
+  webpack_0__react___html as default
+};

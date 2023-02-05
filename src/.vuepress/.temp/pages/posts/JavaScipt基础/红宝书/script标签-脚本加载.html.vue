@@ -1,5 +1,4 @@
-<template><div><p>![image-20220202223345035](/Users/jaydonyin/Library/Application Support/typora-user-images/image-20220202223345035.png)</p>
-<h2 id="script-元素" tabindex="-1"><a class="header-anchor" href="#script-元素" aria-hidden="true">#</a> <code v-pre>&lt;Script&gt;</code>元素</h2>
+<template><div><h2 id="script-元素" tabindex="-1"><a class="header-anchor" href="#script-元素" aria-hidden="true">#</a> <code v-pre>&lt;Script&gt;</code>元素</h2>
 <h3 id="crossorigin" tabindex="-1"><a class="header-anchor" href="#crossorigin" aria-hidden="true">#</a> crossorigin</h3>
 <blockquote>
 <p>涉及到的元素  1.script 2.link 3.img 4.audio 5.video</p>
@@ -19,7 +18,6 @@
 <h2 id="可以跟上一个散列值算法和base64编码的散列值等-浏览器拿到这个值之后-用第三方服务器返回回来的它自己计算的散列值和intergrity上的匹配-如果相等就显示-否则返回网络错误。" tabindex="-1"><a class="header-anchor" href="#可以跟上一个散列值算法和base64编码的散列值等-浏览器拿到这个值之后-用第三方服务器返回回来的它自己计算的散列值和intergrity上的匹配-如果相等就显示-否则返回网络错误。" aria-hidden="true">#</a> 可以跟上一个散列值算法和base64编码的散列值等，浏览器拿到这个值之后，用第三方服务器返回回来的它自己计算的散列值和intergrity上的匹配，如果相等就显示，否则返回网络错误。</h2>
 <p>这个值能确保我们使用第三方值，没有被篡改过。</p>
 <h4 id="async和defer" tabindex="-1"><a class="header-anchor" href="#async和defer" aria-hidden="true">#</a> async和defer</h4>
-<p>![image-20220202224841686](/Users/jaydonyin/Library/Application Support/typora-user-images/image-20220202224841686.png)</p>
 <ol>
 <li>Parser 表示html引擎的解析，解析html文档的解析器。</li>
 <li>Fetch 表示获取脚本资源。</li>

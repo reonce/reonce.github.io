@@ -1,4 +1,4 @@
-<template><div><h4 id="proxy和object-defineproperty的区别" tabindex="-1"><a class="header-anchor" href="#proxy和object-defineproperty的区别" aria-hidden="true">#</a> Proxy和Object.defineProperty的区别</h4>
+<template><div><h1 id="proxy和object-defineproperty的区别" tabindex="-1"><a class="header-anchor" href="#proxy和object-defineproperty的区别" aria-hidden="true">#</a> Proxy和Object.defineProperty的区别</h1>
 <p><strong>Proxy的优势如下</strong></p>
 <ul>
 <li>Proxy可以直接监听整个对象而非属性。</li>
