@@ -1,228 +1,104 @@
-<template>
-  <div>
-    <h1 id="webpack从0搭建react项目" tabindex="-1">
-      <a
-        class="header-anchor"
-        href="#webpack从0搭建react项目"
-        aria-hidden="true"
-        >#</a
-      >
-      webpack从0搭建react项目
-    </h1>
-    <p>
-      本教程不会涉及到任何的实现原理，只是
-      <strong>webpack 的使用</strong>和<strong>第三方库的使用</strong>
-    </p>
-    <h1 id="准备" tabindex="-1">
-      <a class="header-anchor" href="#准备" aria-hidden="true">#</a> 准备
-    </h1>
-    <p>后续补齐相关学习资料</p>
-    <p>学习之前，你需要做一些知识的了解：</p>
-    <ul>
-      <li>node 入门（path模块，命令行）</li>
-      <li>前端模块化入门</li>
-      <li>webpack 入门</li>
-      <li>babel 入门</li>
-      <li>正则入门</li>
-    </ul>
-    <p>
-      <strong>请务必保证上述内容都至少了解的情况下，再开始学习本教程</strong>
-    </p>
-    <hr />
-    <h1 id="前言" tabindex="-1">
-      <a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言
-    </h1>
-    <p>一般情况下一个新项目来临时，都是通过内部脚手架直接创建项目，如下：</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code>npx create-react-app project-name --scripts-version @newrank/react-scripts <span class="token parameter variable">--template</span> @newrank/mamba-pro
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      但开发时项目里面很多前端的部分都是知其然而不知其所以然，心中自然会有一些疑问：
-    </p>
-    <ul>
-      <li>不同浏览器的 js 语法兼容怎么处理的？</li>
-      <li>最终生成的 js 是怎么到 html 中的？</li>
-      <li>不同环境的 webpack 配置怎么实现的？</li>
-      <li>...</li>
-    </ul>
-    <p>
-      通过本教程你可以学会使用 webpack 怎么从零一步一步的搭建一个完整的 react
-      项目。
-    </p>
-    <h1 id="需求" tabindex="-1">
-      <a class="header-anchor" href="#需求" aria-hidden="true">#</a> 需求
-    </h1>
-    <p>最终都会通过webpack的打包输出成 html + css + js</p>
-    <p>搭建的react项目支持以下基础内容：</p>
-    <ul>
-      <li>
-        <p>ES新语法</p>
-      </li>
-      <li>
-        <p>HTML</p>
-      </li>
-      <li>
-        <p>React</p>
-      </li>
-      <li>
-        <p>本地开发（dev-server）</p>
-      </li>
-      <li>
-        <p>处理文件</p>
-      </li>
-      <li>
-        <ul>
-          <li>CSS</li>
-          <li>资源</li>
-        </ul>
-      </li>
-      <li>
-        <p>区分开发/生产环境</p>
-      </li>
-      <li>
-        <p>修改本地开发域名/端口</p>
-      </li>
-      <li>
-        <p>配置环境变量的获取</p>
-      </li>
-      <li>
-        <p>build 静态资源</p>
-      </li>
-      <li>
-        <p>第三方工具库</p>
-      </li>
-      <li>
-        <ul>
-          <li>react-router</li>
-          <li>状态管理</li>
-          <li>antd</li>
-          <li>可视化工具库</li>
-          <li>发请求</li>
-        </ul>
-      </li>
-    </ul>
-    <h1 id="项目搭建" tabindex="-1">
-      <a class="header-anchor" href="#项目搭建" aria-hidden="true">#</a>
-      项目搭建
-    </h1>
-    <p>教程中所有图片中有 dist 文件夹就是 build文件夹，命名不同而已</p>
-    <h2 id="新建项目" tabindex="-1">
-      <a class="header-anchor" href="#新建项目" aria-hidden="true">#</a>
-      新建项目
-    </h2>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646017817046-69bfb37e-d05d-4086-8c7a-ed09c8e10d28.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <h2 id="初始化项目" tabindex="-1">
-      <a class="header-anchor" href="#初始化项目" aria-hidden="true">#</a>
-      初始化项目
-    </h2>
-    <p>
-      npm 是 JavaScript 世界的包管理工具，并且是 Nodejs
-      平台的默认包管理工具。通过 npm
-      可以安装、共享、分发代码，管理项目依赖关系。
-    </p>
-    <p>包管理工具统一使用 yarn。（npm有点慢）</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> init <span class="token parameter variable">-y</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h2 id="使用webpack" tabindex="-1">
-      <a class="header-anchor" href="#使用webpack" aria-hidden="true">#</a>
-      使用webpack
-    </h2>
-    <p>webpack 版本：webpack5</p>
-    <p>安装 webpack</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> webpack webpack-cli <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>项目根目录添加 webpack 配置文件 webpack.config.js</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+<template><div><h1 id="webpack从0搭建react项目" tabindex="-1"><a class="header-anchor" href="#webpack从0搭建react项目" aria-hidden="true">#</a> webpack从0搭建react项目</h1>
+<p>本教程不会涉及到任何的实现原理，只是 <strong>webpack 的使用</strong>和<strong>第三方库的使用</strong></p>
+<h1 id="准备" tabindex="-1"><a class="header-anchor" href="#准备" aria-hidden="true">#</a> 准备</h1>
+<p>后续补齐相关学习资料</p>
+<p>学习之前，你需要做一些知识的了解：</p>
+<ul>
+<li>node 入门（path模块，命令行）</li>
+<li>前端模块化入门</li>
+<li>webpack 入门</li>
+<li>babel 入门</li>
+<li>正则入门</li>
+</ul>
+<p><strong>请务必保证上述内容都至少了解的情况下，再开始学习本教程</strong></p>
+<hr>
+<h1 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h1>
+<p>一般情况下一个新项目来临时，都是通过内部脚手架直接创建项目，如下：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>npx create-react-app project-name --scripts-version @newrank/react-scripts <span class="token parameter variable">--template</span> @newrank/mamba-pro
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>但开发时项目里面很多前端的部分都是知其然而不知其所以然，心中自然会有一些疑问：</p>
+<ul>
+<li>不同浏览器的 js 语法兼容怎么处理的？</li>
+<li>最终生成的 js 是怎么到 html 中的？</li>
+<li>不同环境的 webpack 配置怎么实现的？</li>
+<li>...</li>
+</ul>
+<p>通过本教程你可以学会使用 webpack 怎么从零一步一步的搭建一个完整的 react 项目。</p>
+<h1 id="需求" tabindex="-1"><a class="header-anchor" href="#需求" aria-hidden="true">#</a> 需求</h1>
+<p>最终都会通过webpack的打包输出成 html + css + js</p>
+<p>搭建的react项目支持以下基础内容：</p>
+<ul>
+<li>
+<p>ES新语法</p>
+</li>
+<li>
+<p>HTML</p>
+</li>
+<li>
+<p>React</p>
+</li>
+<li>
+<p>本地开发（dev-server）</p>
+</li>
+<li>
+<p>处理文件</p>
+</li>
+<li>
+<ul>
+<li>CSS</li>
+<li>资源</li>
+</ul>
+</li>
+<li>
+<p>区分开发/生产环境</p>
+</li>
+<li>
+<p>修改本地开发域名/端口</p>
+</li>
+<li>
+<p>配置环境变量的获取</p>
+</li>
+<li>
+<p>build 静态资源</p>
+</li>
+<li>
+<p>第三方工具库</p>
+</li>
+<li>
+<ul>
+<li>react-router</li>
+<li>状态管理</li>
+<li>antd</li>
+<li>可视化工具库</li>
+<li>发请求</li>
+</ul>
+</li>
+</ul>
+<h1 id="项目搭建" tabindex="-1"><a class="header-anchor" href="#项目搭建" aria-hidden="true">#</a> 项目搭建</h1>
+<p>教程中所有图片中有 dist 文件夹就是 build文件夹，命名不同而已</p>
+<h2 id="新建项目" tabindex="-1"><a class="header-anchor" href="#新建项目" aria-hidden="true">#</a> 新建项目</h2>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646017817046-69bfb37e-d05d-4086-8c7a-ed09c8e10d28.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<h2 id="初始化项目" tabindex="-1"><a class="header-anchor" href="#初始化项目" aria-hidden="true">#</a> 初始化项目</h2>
+<p>npm 是 JavaScript 世界的包管理工具，并且是 Nodejs 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码，管理项目依赖关系。</p>
+<p>包管理工具统一使用 yarn。（npm有点慢）</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> init <span class="token parameter variable">-y</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="使用webpack" tabindex="-1"><a class="header-anchor" href="#使用webpack" aria-hidden="true">#</a> 使用webpack</h2>
+<p>webpack 版本：webpack5</p>
+<p>安装 webpack</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> webpack webpack-cli <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>项目根目录添加 webpack 配置文件 webpack.config.js</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h2 id="配置mode和输入输出" tabindex="-1">
-      <a class="header-anchor" href="#配置mode和输入输出" aria-hidden="true"
-        >#</a
-      >
-      配置mode和输入输出
-    </h2>
-    <p>根目录下新建文件夹 src，并添加 index.js 文件</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646030482380-1614a429-b95b-4db4-bb83-a0caef92a8f3.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> <span class="token function-variable function">fun</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="配置mode和输入输出" tabindex="-1"><a class="header-anchor" href="#配置mode和输入输出" aria-hidden="true">#</a> 配置mode和输入输出</h2>
+<p>根目录下新建文件夹 src，并添加 index.js 文件</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646030482380-1614a429-b95b-4db4-bb83-a0caef92a8f3.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token function-variable function">fun</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"aobam"</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he name is"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fun<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>添加 webpack 配置</p>
-    <p>
-      path.resolve 参考资料：<a
-        href="http://nodejs.cn/api/path/path_resolve_paths.html"
-        target="_blank"
-        rel="noopener noreferrer"
-        >http://nodejs.cn/api/path/path_resolve_paths.html<ExternalLinkIcon
-      /></a>
-    </p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>添加 webpack 配置</p>
+<p>path.resolve 参考资料：<a href="http://nodejs.cn/api/path/path_resolve_paths.html" target="_blank" rel="noopener noreferrer">http://nodejs.cn/api/path/path_resolve_paths.html<ExternalLinkIcon/></a></p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token comment">// 启用 webpack 内置在相应环境（development/production）下的优化</span>
@@ -238,60 +114,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token literal-property property">clean</span><span class="token operator">:</span><span class="token boolean">true</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>package.json 添加 scripts</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre
-        v-pre
-        class="language-json"
-      ><code><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>package.json 添加 scripts</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
   <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack"</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn build</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646030813706-7c690af3-a7a2-4e55-abe8-573baab56483.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token comment">/*
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646030813706-7c690af3-a7a2-4e55-abe8-573baab56483.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token comment">/*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
  * It uses "eval()" calls to create a separate source file in the browser devtools.
@@ -323,111 +154,23 @@ eval("const fun = () => <span class="token punctuation">{</span>\r\n  const name
 <span class="token doc-comment comment">/******/</span> 	
 <span class="token doc-comment comment">/******/</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>修改 webpack 配置的 mode 为 &quot;production&quot;</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改 webpack 配置的 mode 为 &quot;production&quot;</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">mode</span><span class="token operator">:</span><span class="token string">"production"</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn build</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646031178512-0a0b12ea-3598-4b82-ac44-8831d1224452.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token comment">// 省略了定义的部分</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646031178512-0a0b12ea-3598-4b82-ac44-8831d1224452.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token comment">// 省略了定义的部分</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he name is"</span><span class="token punctuation">,</span><span class="token string">"aobam"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>可以看出 mode 不同时 webpack 在打包时做了不同的处理。</p>
-    <p>contenthash 的值也是有所不同的。</p>
-    <h2 id="支持es新语法" tabindex="-1">
-      <a class="header-anchor" href="#支持es新语法" aria-hidden="true">#</a>
-      支持es新语法
-    </h2>
-    <p>安装 babel</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> @babel/core @babel/preset-env babel-loader <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      Babel 是一个工具链，主要用于将 ECMAScript 2015+
-      代码转换为当前和旧版浏览器或环境中向后兼容的 JavaScript 版本。
-    </p>
-    <p>
-      @babel/preset-env 是一个智能预设，允许您使用最新的
-      JavaScript，而无需微观管理目标环境需要哪些语法转换。利用你指定的任何目标环境,然后检查它们对应的插件,并传给
-      Babel 进行转译。
-    </p>
-    <p>添加 babel 配置文件 .babelrc</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre
-        v-pre
-        class="language-json"
-      ><code><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看出 mode 不同时 webpack 在打包时做了不同的处理。</p>
+<p>contenthash 的值也是有所不同的。</p>
+<h2 id="支持es新语法" tabindex="-1"><a class="header-anchor" href="#支持es新语法" aria-hidden="true">#</a> 支持es新语法</h2>
+<p>安装 babel</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> @babel/core @babel/preset-env babel-loader <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Babel 是一个工具链，主要用于将 ECMAScript 2015+ 代码转换为当前和旧版浏览器或环境中向后兼容的 JavaScript 版本。</p>
+<p>@babel/preset-env 是一个智能预设，允许您使用最新的 JavaScript，而无需微观管理目标环境需要哪些语法转换。利用你指定的任何目标环境,然后检查它们对应的插件,并传给 Babel 进行转译。</p>
+<p>添加 babel 配置文件 .babelrc</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
   <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">[</span>
       <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
@@ -440,33 +183,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">]</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      注意：后续任何步骤中提示 core-js 错误时，请 yarn add core-js -D 安装
-      core-js
-    </p>
-    <p>webpack 中配置 babel</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code>module.exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意：后续任何步骤中提示 core-js 错误时，请 yarn add core-js -D 安装 core-js</p>
+<p>webpack 中配置 babel</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>module.exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   module: <span class="token punctuation">{</span>
     rules: <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
@@ -477,41 +196,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">]</span>,
   <span class="token punctuation">}</span>,
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn build</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token comment">// </span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token comment">// </span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he name is"</span><span class="token punctuation">,</span><span class="token string">"aobam"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>箭头函数被转义成 function 了，babel 生效了，但是看不到 const 的转义</p>
-    <p>修改 mode 为 &quot;development&quot;，再执行 yarn build</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token comment">/*
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>箭头函数被转义成 function 了，babel 生效了，但是看不到 const 的转义</p>
+<p>修改 mode 为 &quot;development&quot;，再执行 yarn build</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token comment">/*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
  * It uses "eval()" calls to create a separate source file in the browser devtools.
@@ -543,67 +233,12 @@ eval("var fun = function fun() <span class="token punctuation">{</span>\n  var n
 <span class="token doc-comment comment">/******/</span> 	
 <span class="token doc-comment comment">/******/</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>可以看到 const 转义成了 var，babel 确实生效了。</p>
-    <h2 id="js插入html" tabindex="-1">
-      <a class="header-anchor" href="#js插入html" aria-hidden="true">#</a>
-      js插入HTML
-    </h2>
-    <p>
-      每次构建生成的 js 文件带着的 hash 值不一样，例如
-      main.9358ee34.js，所以每次 html 中应该引入的 js
-      文件是不同的。每次都去手动的修改又比较麻烦，就可以通过插件的形式自动插入。
-    </p>
-    <p>根目录下创建 public 文件夹 并新建 index.html</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646032751903-fe8a9473-24fe-4700-9382-1cff3d39f4ac.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-html line-numbers-mode" data-ext="html">
-      <pre
-        v-pre
-        class="language-html"
-      ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看到 const 转义成了 var，babel 确实生效了。</p>
+<h2 id="js插入html" tabindex="-1"><a class="header-anchor" href="#js插入html" aria-hidden="true">#</a> js插入HTML</h2>
+<p>每次构建生成的 js 文件带着的 hash 值不一样，例如 main.9358ee34.js，所以每次 html 中应该引入的 js 文件是不同的。每次都去手动的修改又比较麻烦，就可以通过插件的形式自动插入。</p>
+<p>根目录下创建 public 文件夹 并新建 index.html</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646032751903-fe8a9473-24fe-4700-9382-1cff3d39f4ac.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -615,30 +250,8 @@ eval("var fun = function fun() <span class="token punctuation">{</span>\n  var n
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>webpack-react-demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      复制 index.html 到 build 目录下，添加 script 标签引入刚才生成的 js 文件
-    </p>
-    <div class="language-html line-numbers-mode" data-ext="html">
-      <pre
-        v-pre
-        class="language-html"
-      ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>复制 index.html 到 build 目录下，添加 script 标签引入刚才生成的 js 文件</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -651,54 +264,13 @@ eval("var fun = function fun() <span class="token punctuation">{</span>\n  var n
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./main.2d1423ae.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>直接启动 live server（需要安装 vscode 插件：Live Server）</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646033219465-0c8fc0ea-bde2-4c6d-af70-839933d329c8.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>
-      每次打包生成的 js 带有 hash 值，手动添加就会过于麻烦，所以通过插件
-      html-webpack-plugin 自动将生成的 js 引入到 html文件中。
-    </p>
-    <p>安装 html-webpack-plugin：自动在模板 html 中插入 script 标签引入 js</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> html-webpack-plugin <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>添加 webpack 配置</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> HtmlWebpackPlugin<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>直接启动 live server（需要安装 vscode 插件：Live Server）</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646033219465-0c8fc0ea-bde2-4c6d-af70-839933d329c8.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>每次打包生成的 js 带有 hash 值，手动添加就会过于麻烦，所以通过插件 html-webpack-plugin 自动将生成的 js 引入到 html文件中。</p>
+<p>安装 html-webpack-plugin：自动在模板 html 中插入 script 标签引入 js</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> html-webpack-plugin <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>添加 webpack 配置</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> HtmlWebpackPlugin<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token operator">...</span><span class="token punctuation">,</span>
@@ -707,41 +279,12 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h2 id="配置react" tabindex="-1">
-      <a class="header-anchor" href="#配置react" aria-hidden="true">#</a>
-      配置React
-    </h2>
-    <p>使用 react 框架构建用户界面</p>
-    <p>安装 react</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> react react-dom
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>修改 index.html</p>
-    <div class="language-html line-numbers-mode" data-ext="html">
-      <pre
-        v-pre
-        class="language-html"
-      ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="配置react" tabindex="-1"><a class="header-anchor" href="#配置react" aria-hidden="true">#</a> 配置React</h2>
+<p>使用 react 框架构建用户界面</p>
+<p>安装 react</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> react react-dom
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>修改 index.html</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -753,28 +296,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>在 src 中新增 App.jsx 和 index.jsx，删除 index.js</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在 src 中新增 App.jsx 和 index.jsx，删除 index.js</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
 	<span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">app</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
@@ -786,47 +309,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App"</span><span class="token punctuation">;</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>添加 webpack 配置：识别后缀为 .js 和 .jsx 的文件</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>export<span class="token operator">=</span><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>添加 webpack 配置：识别后缀为 .js 和 .jsx 的文件</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>export<span class="token operator">=</span><span class="token punctuation">{</span>
   <span class="token literal-property property">resolve</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token literal-property property">extensions</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'.jsx'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>修改 webpack 配置：js 改为 jsx</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改 webpack 配置：js 改为 jsx</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token comment">// 输入</span>
@@ -841,42 +331,10 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>安装 @babel/preset-react</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> @babel/preset-react <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>添加 babel 配置</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre
-        v-pre
-        class="language-json"
-      ><code><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>安装 @babel/preset-react</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> @babel/preset-react <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>添加 babel 配置</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
   <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">[</span>
       <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
@@ -889,38 +347,9 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token string">"@babel/preset-react"</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn build</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646034930053-33fb73b2-76b0-4437-bebf-0b813eef1c32.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-html line-numbers-mode" data-ext="html">
-      <pre
-        v-pre
-        class="language-html"
-      ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646034930053-33fb73b2-76b0-4437-bebf-0b813eef1c32.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -936,63 +365,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
 // main.bcb48309.js
 // 自己打包出来看
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>index.html 启动 live server</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646035187646-51842906-9284-448a-9316-4d9089c909c6.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>nice啊，react成功了，牛啊</p>
-    <h2 id="支持本地开发" tabindex="-1">
-      <a class="header-anchor" href="#支持本地开发" aria-hidden="true">#</a>
-      支持本地开发
-    </h2>
-    <p>
-      每次写好代码如果都要去
-      build，然后再去看页面效果，实在是麻烦，如果能有一个本开发的服务器，可以改了代码马上就能看到页面效果就好了。哎，webpack-dev-server
-      正好可以提供了完美的解决方案。
-    </p>
-    <p>安装 webpack-dev-server</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> webpack-dev-server <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>添加 webpack 配置：通过 devServer 使用插件</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>index.html 启动 live server</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646035187646-51842906-9284-448a-9316-4d9089c909c6.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>nice啊，react成功了，牛啊</p>
+<h2 id="支持本地开发" tabindex="-1"><a class="header-anchor" href="#支持本地开发" aria-hidden="true">#</a> 支持本地开发</h2>
+<p>每次写好代码如果都要去 build，然后再去看页面效果，实在是麻烦，如果能有一个本开发的服务器，可以改了代码马上就能看到页面效果就好了。哎，webpack-dev-server 正好可以提供了完美的解决方案。</p>
+<p>安装 webpack-dev-server</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> webpack-dev-server <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>添加 webpack 配置：通过 devServer 使用插件</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span>
 	<span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token comment">// history路由</span>
     <span class="token literal-property property">historyApiFallback</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -1000,73 +381,21 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>package.json 添加 scripts</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre
-        v-pre
-        class="language-json"
-      ><code><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>package.json 添加 scripts</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
 	<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack serve"</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn start</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646036144298-c0faa9e3-fcd9-4a8e-9659-1d6ca45603c5.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>
-      修改页面内容会发现有点迟钝，请确定 mode 为 &quot;development&quot;
-      时再启动本地开发服务器。
-    </p>
-    <h2 id="处理样式文件" tabindex="-1">
-      <a class="header-anchor" href="#处理样式文件" aria-hidden="true">#</a>
-      处理样式文件
-    </h2>
-    <p>html+js 都有了，css 肯定也不能少</p>
-    <p>安装各种样式 loader</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> style-loader css-loader <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>添加webpack配置</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn start</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646036144298-c0faa9e3-fcd9-4a8e-9659-1d6ca45603c5.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>修改页面内容会发现有点迟钝，请确定 mode 为 &quot;development&quot; 时再启动本地开发服务器。</p>
+<h2 id="处理样式文件" tabindex="-1"><a class="header-anchor" href="#处理样式文件" aria-hidden="true">#</a> 处理样式文件</h2>
+<p>html+js 都有了，css 肯定也不能少</p>
+<p>安装各种样式 loader</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> style-loader css-loader <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>添加webpack配置</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token comment">// 配置css</span>
@@ -1080,30 +409,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>给 App.jsx 添加 App.css 文件并引入</p>
-    <div class="language-css line-numbers-mode" data-ext="css">
-      <pre
-        v-pre
-        class="language-css"
-      ><code><span class="token selector">.red</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>给 App.jsx 添加 App.css 文件并引入</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.red</span> <span class="token punctuation">{</span>
   <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 import React from <span class="token string">"react"</span><span class="token punctuation">;</span>
@@ -1113,47 +420,13 @@ import <span class="token string">"./App.css"</span><span class="token punctuati
   return &lt;div className=<span class="token string">"red"</span>>app&lt;/div><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 export default App<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn start</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646036465151-dbc976ac-97a4-4780-ae77-0ff8c7f10b6c.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>css 也有了！</p>
-    <h2 id="处理其他文件-静态资源等" tabindex="-1">
-      <a
-        class="header-anchor"
-        href="#处理其他文件-静态资源等"
-        aria-hidden="true"
-        >#</a
-      >
-      处理其他文件（静态资源等）
-    </h2>
-    <p>图片等资源文件的处理都是需要单独配置的</p>
-    <p>添加webpack配置</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code> module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn start</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646036465151-dbc976ac-97a4-4780-ae77-0ff8c7f10b6c.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>css 也有了！</p>
+<h2 id="处理其他文件-静态资源等" tabindex="-1"><a class="header-anchor" href="#处理其他文件-静态资源等" aria-hidden="true">#</a> 处理其他文件（静态资源等）</h2>
+<p>图片等资源文件的处理都是需要单独配置的</p>
+<p>添加webpack配置</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code> module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
@@ -1167,48 +440,10 @@ export default App<span class="token punctuation">;</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      新增 assets 文件夹，并添加
-      <a
-        href="https://newrank.yuque.com/attachments/yuque/0/2022/svg/1032556/1646037387762-37d77ba4-4bd5-4a16-af7c-3bb0dda34569.svg"
-        target="_blank"
-        rel="noopener noreferrer"
-        >📎logo.svg<ExternalLinkIcon
-      /></a>
-    </p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646037362299-28fa1956-b284-47ef-be84-e5f28b5a2faf.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>App.jsx 中使用 svg</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>新增 assets 文件夹，并添加 <a href="https://newrank.yuque.com/attachments/yuque/0/2022/svg/1032556/1646037387762-37d77ba4-4bd5-4a16-af7c-3bb0dda34569.svg" target="_blank" rel="noopener noreferrer">📎logo.svg<ExternalLinkIcon/></a></p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646037362299-28fa1956-b284-47ef-be84-e5f28b5a2faf.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>App.jsx 中使用 svg</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">"./App.css"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">"./assets/head.svg"</span><span class="token punctuation">;</span>
 
@@ -1222,71 +457,17 @@ export default App<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn start</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646037540137-373313ea-69eb-4815-a86e-11ac5b7c1e80.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>勉强可以开发页面了。</p>
-    <h2 id="区分开发-生产环境" tabindex="-1">
-      <a class="header-anchor" href="#区分开发-生产环境" aria-hidden="true"
-        >#</a
-      >
-      区分开发/生产环境
-    </h2>
-    <p>开发和生产需要不同的 webpack 配置</p>
-    <p>
-      在根目录下新建config文件夹，并创建以下三个文件：webpack.common.js，webpack.dev.js，webpack.prod.js
-    </p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646038804318-94e1aca0-8857-4dbf-8d4a-864110483644.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>安装webpack-merge合并使用配置</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> webpack-merge <span class="token parameter variable">-D</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>公共配置 webpack.common.js</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn start</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646037540137-373313ea-69eb-4815-a86e-11ac5b7c1e80.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>勉强可以开发页面了。</p>
+<h2 id="区分开发-生产环境" tabindex="-1"><a class="header-anchor" href="#区分开发-生产环境" aria-hidden="true">#</a> 区分开发/生产环境</h2>
+<p>开发和生产需要不同的 webpack 配置</p>
+<p>在根目录下新建config文件夹，并创建以下三个文件：webpack.common.js，webpack.dev.js，webpack.prod.js</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646038804318-94e1aca0-8857-4dbf-8d4a-864110483644.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>安装webpack-merge合并使用配置</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> webpack-merge <span class="token parameter variable">-D</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>公共配置 webpack.common.js</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -1324,54 +505,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>开发环境配置 webpack.dev.js</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./webpack.common"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>开发环境配置 webpack.dev.js</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./webpack.common"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span> merge <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"webpack-merge"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>common<span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -1384,29 +519,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>生产环境配置 webpack.prod.js</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>生产环境配置 webpack.prod.js</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./webpack.common"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span> merge <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"webpack-merge"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1425,121 +539,30 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token literal-property property">hints</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>注意为了保证打包的正常执行，此处我们关闭了 performance 的性能提示配置</p>
-    <p>修改 package.json 中 scripts</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre
-        v-pre
-        class="language-json"
-      ><code><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意为了保证打包的正常执行，此处我们关闭了 performance 的性能提示配置</p>
+<p>修改 package.json 中 scripts</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
 	<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack serve --config config/webpack.dev.js"</span><span class="token punctuation">,</span>
     <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack --config config/webpack.prod.js"</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn build 和 yarn start</p>
-    <p>自行验证是否正常打包和启动本地服务器</p>
-    <h2 id="修改本地开发的域名和端口" tabindex="-1">
-      <a
-        class="header-anchor"
-        href="#修改本地开发的域名和端口"
-        aria-hidden="true"
-        >#</a
-      >
-      修改本地开发的域名和端口
-    </h2>
-    <p>添加 webpack 配置</p>
-    <p>
-      公司内部项目本地开发时，往往需要用到用户信息，此时就需要修改域名为
-      <a href="http://xx.newrank.cn" target="_blank" rel="noopener noreferrer"
-        >xx.newrank.cn<ExternalLinkIcon /></a
-      >，<a
-        href="http://xn--6kq01kj5cpwguma170aqtgp4nuo9b66wxvd.newrank.cn"
-        target="_blank"
-        rel="noopener noreferrer"
-        >才能在发起请求时将属于.newrank.cn<ExternalLinkIcon
-      /></a>
-      的 cookies 带到请求 header 中，从而得到接口返回的用户信息。
-    </p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>common<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build 和 yarn start</p>
+<p>自行验证是否正常打包和启动本地服务器</p>
+<h2 id="修改本地开发的域名和端口" tabindex="-1"><a class="header-anchor" href="#修改本地开发的域名和端口" aria-hidden="true">#</a> 修改本地开发的域名和端口</h2>
+<p>添加 webpack 配置</p>
+<p>公司内部项目本地开发时，往往需要用到用户信息，此时就需要修改域名为 <a href="http://xx.newrank.cn" target="_blank" rel="noopener noreferrer">xx.newrank.cn<ExternalLinkIcon/></a>，<a href="http://xn--6kq01kj5cpwguma170aqtgp4nuo9b66wxvd.newrank.cn" target="_blank" rel="noopener noreferrer">才能在发起请求时将属于.newrank.cn<ExternalLinkIcon/></a> 的 cookies 带到请求 header 中，从而得到接口返回的用户信息。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>common<span class="token punctuation">,</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">7080</span><span class="token punctuation">,</span>
     <span class="token comment">// 需要修改本地电脑 hosts 文件</span>
     <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">"local.newrank.cn"</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>修改本地 hosts，win+R 打开运行 C:\WINDOWS\system32\drivers\etc</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646293478345-e41f5c9e-5dd1-4fc8-9ca0-9b7f9dd9f25e.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>
-      使用任意编辑器打开hosts文件，在最下方添加 127.0.0.1
-      <a
-        href="http://local.newrank.cn"
-        target="_blank"
-        rel="noopener noreferrer"
-        >local.newrank.cn<ExternalLinkIcon /></a
-      >，保存退出
-    </p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code># <span class="token function">Copyright</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">1993</span><span class="token operator">-</span><span class="token number">2009</span> Microsoft Corp<span class="token punctuation">.</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改本地 hosts，win+R 打开运行 C:\WINDOWS\system32\drivers\etc</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646293478345-e41f5c9e-5dd1-4fc8-9ca0-9b7f9dd9f25e.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>使用任意编辑器打开hosts文件，在最下方添加 127.0.0.1 <a href="http://local.newrank.cn" target="_blank" rel="noopener noreferrer">local.newrank.cn<ExternalLinkIcon/></a>，保存退出</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code># <span class="token function">Copyright</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">1993</span><span class="token operator">-</span><span class="token number">2009</span> Microsoft Corp<span class="token punctuation">.</span>
 #
 # This is a sample <span class="token constant">HOSTS</span> file used by Microsoft <span class="token constant">TCP</span><span class="token operator">/</span><span class="token constant">IP</span> <span class="token keyword">for</span> Windows<span class="token punctuation">.</span>
 #
@@ -1563,64 +586,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
 
 <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span> local<span class="token punctuation">.</span>newrank<span class="token punctuation">.</span>cn
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn start</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646293732874-fa08e241-225a-4875-bdaf-db09b1ee5fa1.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <h2 id="流水线关联配置" tabindex="-1">
-      <a class="header-anchor" href="#流水线关联配置" aria-hidden="true">#</a>
-      流水线关联配置
-    </h2>
-    <h3 id="配置环境变量的获取" tabindex="-1">
-      <a class="header-anchor" href="#配置环境变量的获取" aria-hidden="true"
-        >#</a
-      >
-      配置环境变量的获取
-    </h3>
-    <p>
-      项目中我们常常需要通过环境变量灵活的控制 webpack
-      的配置和页面中也一些变量等，例如：不同环境下的请求地址不同。
-    </p>
-    <p>添加 webapck 配置</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn start</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646293732874-fa08e241-225a-4875-bdaf-db09b1ee5fa1.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<h2 id="流水线关联配置" tabindex="-1"><a class="header-anchor" href="#流水线关联配置" aria-hidden="true">#</a> 流水线关联配置</h2>
+<h3 id="配置环境变量的获取" tabindex="-1"><a class="header-anchor" href="#配置环境变量的获取" aria-hidden="true">#</a> 配置环境变量的获取</h3>
+<p>项目中我们常常需要通过环境变量灵活的控制 webpack 的配置和页面中也一些变量等，例如：不同环境下的请求地址不同。</p>
+<p>添加 webapck 配置</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span>
 	<span class="token literal-property property">plugins</span><span class="token operator">:</span><span class="token punctuation">[</span>
   	<span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DefinePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
       <span class="token comment">// 设置 mode 时会自动定义</span>
@@ -1634,54 +606,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>环境变量不限于以上内容，按需添加</p>
-    <p>使用环境变量，index.jsx 中添加代码</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"process.env.PUBLIC_URL"</span><span class="token punctuation">,</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PUBLIC_URL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// process.env.PUBLIC_URL undefined</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>环境变量不限于以上内容，按需添加</p>
+<p>使用环境变量，index.jsx 中添加代码</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"process.env.PUBLIC_URL"</span><span class="token punctuation">,</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PUBLIC_URL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// process.env.PUBLIC_URL undefined</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"process.env.REACT_APP_API_HOST"</span><span class="token punctuation">,</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">REACT_APP_API_HOST</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// process.env.REACT_APP_API_HOST undefined</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      可以看到获取到的值都是
-      undefined，配置是成功了，但我们并没有在任何地方有添加过环境变量，
-      后续会<strong>在流水线中有添加使用</strong>
-    </p>
-    <h3 id="build-静态资源" tabindex="-1">
-      <a class="header-anchor" href="#build-静态资源" aria-hidden="true">#</a>
-      build 静态资源
-    </h3>
-    <p>添加/修改 webpack 配置</p>
-    <p>publicPath 配置打包之后资源访问路径</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>common<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看到获取到的值都是 undefined，配置是成功了，但我们并没有在任何地方有添加过环境变量， 后续会<strong>在流水线中有添加使用</strong></p>
+<h3 id="build-静态资源" tabindex="-1"><a class="header-anchor" href="#build-静态资源" aria-hidden="true">#</a> build 静态资源</h3>
+<p>添加/修改 webpack 配置</p>
+<p>publicPath 配置打包之后资源访问路径</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>common<span class="token punctuation">,</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token comment">// 修改</span>
     <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">"static/js/[name].[contenthash:8].js"</span><span class="token punctuation">,</span>
@@ -1702,55 +635,12 @@ module<span class="token punctuation">.</span>exports<span class="token operator
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>执行 yarn build</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646294098913-c00cafb2-1d0c-40ab-bded-70eb8596af60.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>
-      将打包之后的静态资源都放在 static 目录下，方便 oss 把 static
-      目录的内容全部上传，<strong>流水线中有使用</strong>
-    </p>
-    <h2 id="gitignore" tabindex="-1">
-      <a class="header-anchor" href="#gitignore" aria-hidden="true">#</a>
-      .gitignore
-    </h2>
-    <p>忽略一些文件不需要上传到</p>
-    <div class="language-plain line-numbers-mode" data-ext="plain">
-      <pre
-        v-pre
-        class="language-plain"
-      ><code># See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>执行 yarn build</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646294098913-c00cafb2-1d0c-40ab-bded-70eb8596af60.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>将打包之后的静态资源都放在 static 目录下，方便 oss 把 static 目录的内容全部上传，<strong>流水线中有使用</strong></p>
+<h2 id="gitignore" tabindex="-1"><a class="header-anchor" href="#gitignore" aria-hidden="true">#</a> .gitignore</h2>
+<p>忽略一些文件不需要上传到</p>
+<div class="language-plain line-numbers-mode" data-ext="plain"><pre v-pre class="language-plain"><code># See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
@@ -1768,56 +658,13 @@ yarn-error.log*
 debug.log*
 
 .env.development.local
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h2 id="第三方工具库" tabindex="-1">
-      <a class="header-anchor" href="#第三方工具库" aria-hidden="true">#</a>
-      第三方工具库
-    </h2>
-    <p>
-      通过添加第三方库补充项目的一些实际需求，例如：UI库带来一些通用组件的便利，spa路由，状态管理，数据交互，可视化图库等
-    </p>
-    <h3 id="react-router" tabindex="-1">
-      <a class="header-anchor" href="#react-router" aria-hidden="true">#</a>
-      react-router
-    </h3>
-    <p>安装 react-router-dom</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> react-router-dom
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>全局配置 history 路由模式，修改 index.jsx</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="第三方工具库" tabindex="-1"><a class="header-anchor" href="#第三方工具库" aria-hidden="true">#</a> 第三方工具库</h2>
+<p>通过添加第三方库补充项目的一些实际需求，例如：UI库带来一些通用组件的便利，spa路由，状态管理，数据交互，可视化图库等</p>
+<h3 id="react-router" tabindex="-1"><a class="header-anchor" href="#react-router" aria-hidden="true">#</a> react-router</h3>
+<p>安装 react-router-dom</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> react-router-dom
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>全局配置 history 路由模式，修改 index.jsx</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> ReactDom <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
@@ -1828,27 +675,8 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">BrowserRouter</span></span><span class="token punctuation">></span></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>useRoutes 管理路由，修改 App.jsx</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>useRoutes 管理路由，修改 App.jsx</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">"./App.css"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Header <span class="token keyword">from</span> <span class="token string">"./layout/Header"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Home <span class="token keyword">from</span> <span class="token string">"./pages/Home"</span><span class="token punctuation">;</span>
@@ -1880,48 +708,8 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
 
   <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>element<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>Layout 与 Outlet 的使用</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Layout 与 Outlet 的使用</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> Outlet <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">"./index.css"</span><span class="token punctuation">;</span>
 
@@ -1936,31 +724,8 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> Header<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>Link 路由跳转</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Link 路由跳转</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> Link <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Home</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -1978,34 +743,8 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> Home<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>useNavigate 替代以前的 useHistory</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useCallback <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>useNavigate 替代以前的 useHistory</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useCallback <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> Link<span class="token punctuation">,</span> useNavigate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Two</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -2026,37 +765,8 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> Two<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>配置basename</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>配置basename</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> ReactDom <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
@@ -2074,49 +784,12 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">BrowserRouter</span></span><span class="token punctuation">></span></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>
-      BrowserRouter 上的 basename
-      可以配置根路由，同一域名下有多个项目时使用。结合后面的 nginx 部分配置。
-    </p>
-    <h3 id="recoil" tabindex="-1">
-      <a class="header-anchor" href="#recoil" aria-hidden="true">#</a> recoil
-    </h3>
-    <p>安装 recoil</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre v-pre class="language-json"><code>yarn add recoil
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>index.jsx 中全局配置 recoil</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>BrowserRouter 上的 basename 可以配置根路由，同一域名下有多个项目时使用。结合后面的 nginx 部分配置。</p>
+<h3 id="recoil" tabindex="-1"><a class="header-anchor" href="#recoil" aria-hidden="true">#</a> recoil</h3>
+<p>安装 recoil</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code>yarn add recoil
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>index.jsx 中全局配置 recoil</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> ReactDom <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
@@ -2130,60 +803,16 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">BrowserRouter</span></span><span class="token punctuation">></span></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>src 中创建 recoil 目录，并创建 app.js 用于 app.jsx 使用的 recoil</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646058831004-15062c8a-db6c-41fc-a5b1-1e22b3d9800d.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">import</span> <span class="token punctuation">{</span> atom <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"recoil"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>src 中创建 recoil 目录，并创建 app.js 用于 app.jsx 使用的 recoil</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646058831004-15062c8a-db6c-41fc-a5b1-1e22b3d9800d.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> atom <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"recoil"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> textState <span class="token operator">=</span> <span class="token function">atom</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"textState"</span><span class="token punctuation">,</span>
   <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>App.jsx 中使用 recoil</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>App.jsx 中使用 recoil</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> textState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./recoil/app"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> useRecoilState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"recoil"</span><span class="token punctuation">;</span>
 
@@ -2201,65 +830,16 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h3 id="antd" tabindex="-1">
-      <a class="header-anchor" href="#antd" aria-hidden="true">#</a> antd
-    </h3>
-    <p>安装 antd</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> antd
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>全局引入antd的样式</p>
-    <div class="language-css line-numbers-mode" data-ext="css">
-      <pre
-        v-pre
-        class="language-css"
-      ><code><span class="token atrule"><span class="token rule">@import</span> <span class="token string">'~antd/dist/antd.css'</span><span class="token punctuation">;</span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="antd" tabindex="-1"><a class="header-anchor" href="#antd" aria-hidden="true">#</a> antd</h3>
+<p>安装 antd</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> antd
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>全局引入antd的样式</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token atrule"><span class="token rule">@import</span> <span class="token string">'~antd/dist/antd.css'</span><span class="token punctuation">;</span></span>
 <span class="token selector">.red</span><span class="token punctuation">{</span>
     <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>使用 antd</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用 antd</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"antd"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">"./app.css"</span><span class="token punctuation">;</span>
 
@@ -2271,43 +851,12 @@ ReactDom<span class="token punctuation">.</span><span class="token function">ren
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h3 id="echarts" tabindex="-1">
-      <a class="header-anchor" href="#echarts" aria-hidden="true">#</a> echarts
-    </h3>
-    <p>安装echarts</p>
-    <p>echarts-for-react 封装了 echarts 的使用，更加方便</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> echarts echarts-for-react
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>新建组件 MyCharts</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">import</span> React from <span class="token string">"react"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="echarts" tabindex="-1"><a class="header-anchor" href="#echarts" aria-hidden="true">#</a> echarts</h3>
+<p>安装echarts</p>
+<p>echarts-for-react 封装了 echarts 的使用，更加方便</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> echarts echarts-for-react
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>新建组件 MyCharts</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">import</span> React from <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token function">import</span> ReactECharts from <span class="token string">"echarts-for-react"</span><span class="token punctuation">;</span>
 
 const MyCharts <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
@@ -2336,81 +885,19 @@ const MyCharts <span class="token operator">=</span> <span class="token punctuat
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token builtin class-name">export</span> default MyCharts<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <h3 id="fetch" tabindex="-1">
-      <a class="header-anchor" href="#fetch" aria-hidden="true">#</a> fetch
-    </h3>
-    <p>安装公司内部的npm包需要添加npm和yarn的配置文件</p>
-    <div class="language-json line-numbers-mode" data-ext="json">
-      <pre
-        v-pre
-        class="language-json"
-      ><code>registry=https<span class="token operator">:</span><span class="token comment">//registry.npm.taobao.org</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="fetch" tabindex="-1"><a class="header-anchor" href="#fetch" aria-hidden="true">#</a> fetch</h3>
+<p>安装公司内部的npm包需要添加npm和yarn的配置文件</p>
+<div class="language-json line-numbers-mode" data-ext="json"><pre v-pre class="language-json"><code>registry=https<span class="token operator">:</span><span class="token comment">//registry.npm.taobao.org</span>
 save-prefix=
 @newrank<span class="token operator">:</span>registry=https<span class="token operator">:</span><span class="token comment">//npm.newrank.cn</span>
 registry <span class="token string">"https://registry.npm.taobao.org"</span>
 save-prefix <span class="token string">""</span>
 <span class="token string">"@newrank:registry"</span> <span class="token string">"https://npm.newrank.cn"</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>安装 @newrank/axios-fetch</p>
-    <p>一个基于 fetch 封装成 axios 使用方式的工具包</p>
-    <div class="language-bash line-numbers-mode" data-ext="sh">
-      <pre
-        v-pre
-        class="language-bash"
-      ><code><span class="token function">yarn</span> <span class="token function">add</span> @newrank/axios-fetch
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>base文件</p>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"@newrank/axios-fetch"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>安装 @newrank/axios-fetch</p>
+<p>一个基于 fetch 封装成 axios 使用方式的工具包</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> @newrank/axios-fetch
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>base文件</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"@newrank/axios-fetch"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">let</span> apiHost <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">REACT_APP_API_HOST</span> <span class="token operator">??</span> <span class="token string">"https://gw.newrank.cn"</span><span class="token punctuation">;</span>
 
@@ -2455,85 +942,13 @@ axiosFetchUser<span class="token punctuation">.</span>interceptors<span class="t
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> axiosFetchUser<span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>创建 api 文件夹统一管理请求，并创建 user.js</p>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646296641002-36288e37-36df-493d-a5da-072968c10b15.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <div class="language-javascript line-numbers-mode" data-ext="js">
-      <pre
-        v-pre
-        class="language-javascript"
-      ><code><span class="token keyword">import</span> axiosFetchUser <span class="token keyword">from</span> <span class="token string">"../fetch/axios-fetch-user"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>创建 api 文件夹统一管理请求，并创建 user.js</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646296641002-36288e37-36df-493d-a5da-072968c10b15.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">import</span> axiosFetchUser <span class="token keyword">from</span> <span class="token string">"../fetch/axios-fetch-user"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getUserInfo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> axiosFetchUser<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/user/getInnerUserInfo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <p>使用 api</p>
-    <div class="language-jsx line-numbers-mode" data-ext="jsx">
-      <pre
-        v-pre
-        class="language-jsx"
-      ><code><span class="token keyword">import</span> <span class="token punctuation">{</span> getUserInfo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./api/user"</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用 api</p>
+<div class="language-jsx line-numbers-mode" data-ext="jsx"><pre v-pre class="language-jsx"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> getUserInfo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./api/user"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> _getDemoData <span class="token operator">=</span> <span class="token function">useCallback</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -2549,42 +964,8 @@ axiosFetchUser<span class="token punctuation">.</span>interceptors<span class="t
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-      <div class="line-numbers" aria-hidden="true">
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-        <div class="line-number"></div>
-      </div>
-    </div>
-    <figure>
-      <img
-        src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646296371061-653d3180-ecca-4891-8d2c-a0de374ae7a3.png"
-        alt="img"
-        tabindex="0"
-        loading="lazy"
-      />
-      <figcaption>img</figcaption>
-    </figure>
-    <p>
-      完整代码阿里云地址：<a
-        href="https://code.aliyun.com/nr-fe/webpack-react-demo.git"
-        target="_blank"
-        rel="noopener noreferrer"
-        >https://code.aliyun.com/nr-fe/webpack-react-demo.git<ExternalLinkIcon
-      /></a>
-    </p>
-  </div>
-</template>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><img src="https://cdn.nlark.com/yuque/0/2022/png/1032556/1646296371061-653d3180-ecca-4891-8d2c-a0de374ae7a3.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>完整代码阿里云地址：<a href="https://code.aliyun.com/nr-fe/webpack-react-demo.git" target="_blank" rel="noopener noreferrer">https://code.aliyun.com/nr-fe/webpack-react-demo.git<ExternalLinkIcon/></a></p>
+</div></template>
+
+

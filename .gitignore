@@ -3,3 +3,5 @@
 .DS_Store
 
 /src/.vuepress/dist
+/src/.vuepress/temp
+
