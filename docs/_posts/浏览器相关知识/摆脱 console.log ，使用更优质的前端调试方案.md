@@ -42,7 +42,7 @@
 以谷歌浏览器为例，可以通过 `command + P` **查找文件** 的方式打开需要调试的文件
 
 
-![1.png](assets/c79ebba84c74475693f7bb794ca52f32~tplv-k3u1fbpfcp-watermark-20230203100727368.png)
+![1.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c79ebba84c74475693f7bb794ca52f32~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
 
 按下 `command + p` 快捷键后，搜索你要调试的文件，例如 `Component/index.tsx` , 即可打开对应的调试文件，接下来，就可以开始打断点了。在这一步下，最便捷的打断点方式就是点击需要调试代码的 **行号**，当代码指定到这行时，会自动进入浏览器的断点调试模式
 
@@ -50,7 +50,7 @@
 
 点击左上角的展开图标, 推荐勾选上这三个筛选分类选项，在左侧 “网页” Tab 下，会实时展示加载模块的文件，找到需要调试的文件，接下来就可以开始调试了
 
-![2.png](assets/ea00c985178f4afdb4be7bc5e9c06d9c~tplv-k3u1fbpfcp-watermark-20230203100727213.png)
+![2.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ea00c985178f4afdb4be7bc5e9c06d9c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
 
 
 ### 2.2 打 JavaScript 断点
@@ -58,7 +58,7 @@
 找到文件之后就可以开始打断点了，在浏览器中最便捷也是最常用的就是直接**点击行号**打断点，例如这里在点击事件这一行打了断点，当触发这个点击事件时，这个断点就会被触发了。
 
 
-![3.png](assets/f64bb0278c3c462aa5e9f7ee26b6107a~tplv-k3u1fbpfcp-watermark-20230203100727206.png)
+![3.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f64bb0278c3c462aa5e9f7ee26b6107a~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
 
 此外，右键行号也可以进行添加断点，它提供了更多的选项，例如：
 
@@ -79,7 +79,7 @@
 0.  启动/关闭错误时暂停执行
 
 
-![4.png](assets/9950d735053a412eb6314cdf52f1a7c2~tplv-k3u1fbpfcp-watermark-20230203100727295.png)
+![4.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9950d735053a412eb6314cdf52f1a7c2~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
 
 在Debugger 模式下可以查看 JavaScript 完整的执行过程，将鼠标移到执行过的变量上可以直接看到变量的值
 
@@ -126,7 +126,7 @@
 配置完成后，打上断点，然后启动项目，点击调试按钮即可启动 VsCode 调试，执行到断点的地方会自动进入 VsCode 的调试模式，和浏览器中调试方式差不多
 
 
-![5.png](assets/b1450c9b0b524c1cb534efc79e40d703~tplv-k3u1fbpfcp-watermark-20230203100727199.png)
+![5.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b1450c9b0b524c1cb534efc79e40d703~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
 
 ## 4. 一些小技巧
 
@@ -153,6 +153,3 @@
 
 奉上一句诗，很贴合调试的学习： **"纸上得来终觉浅，欲知此事要躬行"**
 
-我是饮东，欢迎点赞关注，我们江湖再会
-
-**开启掘金成长之旅！这是我参与「掘金日新计划 · 2 月更文挑战」的第 1 天，[点击查看活动详情](https://juejin.cn/post/7194721470063312933 "https://juejin.cn/post/7194721470063312933")**
