@@ -17,7 +17,7 @@ module.exports = {
         link: "https://github.com/reonce",
       },
       {
-        text: "MIT Licensed | Copyright © 2020-present reonce",
+        text: "MIT Licensed | Copyright © 2020-present 饮东",
       },
     ],
   },

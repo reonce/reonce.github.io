@@ -17,7 +17,7 @@ git init
 git add -A
 git commit -m 'build'
 
-git push -f git@github.com:reonce/reonce.github.io.git master
+git push -f git@github.com:reonce/reonce.github.io.git main
 
 rm -rf dist
 

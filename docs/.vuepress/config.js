@@ -3,7 +3,7 @@ const themeConfig = require("./config/themeConfig.js");
 
 module.exports = {
   theme: "@vuepress/blog",
-  title: "reonce的前端博客",
+  title: "饮东的前端博客(乱序)",
   description: "欢迎来访，这是一个前端博客",
   logo: "./public/logo.png",
   head: [["标签", { rel: "icon", href: "/favicon.ico" }]],
